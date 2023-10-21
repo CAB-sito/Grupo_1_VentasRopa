@@ -15,6 +15,9 @@ Formas en la que nuestros productos se ajustas a nuestro publico:
     Extra: Me gustan los videojuegos y la programacion(suelo escuchar musica mientras codifico).   
 
  -Agustina Castillo:
+   Edad: 25 años.
+   Donde vivo: en Santiago Del Estero, capital.
+   Extra: me gusta escuchar música (aunque no cuando estudio, porque me desconcentra), ver películas y cocinar. 
 
  -Ivo Carrizo:
 
