@@ -26,6 +26,9 @@ Donde vivo: Santiago del Estero, Capital.
 Extra: mi hobby es la decoracion y artes manuales.
 
 -Daniel Alejandro Celiz:
+Edad: 18 años
+donde vivo: Santiago del Estero, Capital.
+Extra: me gusta jugar a la pelota y a los videojuegos.
 
 Listado de referentes del mercado:
 
@@ -33,3 +36,4 @@ Listado de referentes del mercado:
 - https://akualolechic.com/ : En este sitio podemos destacar lo intuitivo de su diseño lo que lo hace facil de navegar y utilizar.
 - https://www.lacoste.com/ar/ : Tomamos como referencia este sitio por sus funcionalidades mas completas ya que cuenta no solo con una bolsa de compras, sino tambien con lista de deseos, opciones de busquedas de locales, etc.
 - https://www.levi.com.ar/ : Aqui podemos tomar como referente el sitio ya que apunta a clientes jovenes tal como deseamos,y porque tiene una estetica atractiva para esa audiencia.
+- https://lennonindumentaria.com.ar/ : tomamos como referencia este sitio por el diseño y por la variedad de productos que ofrece.
