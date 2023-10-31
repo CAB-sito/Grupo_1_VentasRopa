@@ -19,6 +19,9 @@ Donde vivo: Santiago Del Estero, capital.
 Extra: Me gusta escuchar música (aunque no cuando estudio, porque me desconcentra), ver películas y cocinar.
 
 -Ivo Carrizo:
+Edad: 30 años. 
+Donde vivo: Santiago del Estero, Capital. 
+Extra: Me gusta escuchar musica y jugar al futbol.
 
 -Cecilia Vanesa Castaño:
 Edad: 32 años.
