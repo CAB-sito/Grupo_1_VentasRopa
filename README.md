@@ -40,3 +40,6 @@ Listado de referentes del mercado:
 - https://www.lacoste.com/ar/ : Tomamos como referencia este sitio por sus funcionalidades mas completas ya que cuenta no solo con una bolsa de compras, sino tambien con lista de deseos, opciones de busquedas de locales, etc.
 - https://www.levi.com.ar/ : Aqui podemos tomar como referente el sitio ya que apunta a clientes jovenes tal como deseamos,y porque tiene una estetica atractiva para esa audiencia.
 - https://lennonindumentaria.com.ar/ : tomamos como referencia este sitio por el diseño y por la variedad de productos que ofrece.
+
+
+TABLERO DE TRABAJO: https://trello.com/invite/b/sEd1SrzG/ATTI0620e3dd47ff92ec0b8488764adca3cfED06D3C2/grupo1
