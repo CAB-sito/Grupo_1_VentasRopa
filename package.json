@@ -1,0 +1,17 @@
+{
+  "name": "grupo_1_ventasropa",
+  "version": "1.0.0",
+  "description": "Productos que ofrece el sitio: Nuestro sitio web ofrecera variedad de prendas para adultos tanto para mujer como para hombre.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
