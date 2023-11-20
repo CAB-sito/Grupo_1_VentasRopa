@@ -3,7 +3,15 @@
   padding: 0px;
   font-family: "Roboto", sans-serif;
 }
+/*body*/
+body {
+  font-size: 20px;
+  background-color: #c3c3c3;
+}
+
+/*fin body*/
 /*header*/
+
 .nav-flex {
   display: flex;
   background-color: black;
@@ -17,32 +25,133 @@
 .nav-link {
   text-decoration: none;
   color: white;
-  margin-left: 30px;
-  border-right: solid white 1px;
   padding: 10px;
+  transition: background-color, color 0.5s;
+}
+.nav-link:hover {
+  color: black;
+  border-radius: 20px;
+  background-color: gray;
 }
 
 nav p {
   margin-left: 30px;
-  border-right: solid white 1px;
+
   padding: 10px;
 }
 /*fin header*/
+/*main*/
+/*slider autamatico*/
+.slider {
+  overflow: hidden;
+  width: 90%;
+  height: 40%;
+  position: absolute;
+  top: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+  border-radius: 10px;
+}
+.slider ul {
+  width: 400%;
 
-/*body*/
-body {
-  font-size: 20px;
+  display: flex;
+  animation: slaid 12s infinite;
 }
 
-/*fin bady*/
+.slider-item img {
+  width: 100%;
+  height: 40%;
+  border-radius: 10px;
+}
+@keyframes slaid {
+  0% {
+    margin-left: 0%;
+  }
+  20% {
+    margin-left: 0%;
+  }
 
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+
+  75% {
+    margin-left: -300%;
+  }
+  95% {
+    margin-left: -300%;
+  }
+}
+/*fin slider automatico*/
+.container {
+  margin-top: 25%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.product {
+  width: 30%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+.product img {
+  width: 90%;
+  height: 75%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+}
+.product-number {
+  border-top: solid 1px black;
+  font-size: 22px;
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+.discount {
+  margin-left: 5%;
+  color: green;
+}
+.description {
+  margin-left: 100%;
+  margin-top: 5px;
+  padding-top: 5px;
+  font-size: 25px;
+  overflow: hidden;
+  transition: margin-left 0.5s;
+}
+.product:hover .description {
+  margin-left: 5%;
+}
+.product:hover {
+  box-shadow: 10px 5px 5px gray;
+}
+
+/*main*/
 /*footer*/
 .footer-flex {
   display: flex;
   justify-content: space-around;
   background-color: black;
-  position: absolute;
-  bottom: 0;
+  /*position: absolute;*/
+  bottom: 0px;
   width: 100%;
   height: 15vh;
   color: white;
@@ -82,18 +191,3 @@ body {
 }
 
 /*fin footer*/
-
-.carrito {
-  display: flex;
-  justify-items: center;
-  border-bottom: black solid 1px;
-  margin: 10px;
-}
-.pos-body5px {
-  position: absolute;
-  right: 5px;
-}
-
-.compra {
-  display: flex;
-}
