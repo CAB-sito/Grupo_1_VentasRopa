@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-flex">
+        <img class="logo-flex" src="/images/logoDC.jpg" alt="logo" />
+        <a href="*" class="nav-link">home</a>
+        <a href="*" class="nav-link">Preguntas Frecuentes</a>
+        <a href="*" class="nav-link">Login</a>
+        <a href="*" class="nav-link"
+          ><i class="fa-solid fa-bag-shopping"></i
+        ></a>
+      </nav>
+    </header>
+    <main>
+      <section class="carrito">
+        <i class="fa-sharp fa-solid fa-angle-left"></i>
+        <p class="pos-body5px">Carrito de compras</p>
+      </section>
+      <div class="product">
+        <img src="/images/jean-skinny.jpg" alt="imagenJean" />
+      </div>
+      <div>
+      <i class="fa-regular fa-trash-can"></i>
+        <input type="number" name="quantity" value="1" min="1" max="10" />
+    
+      <div class="compra">
+        <div class="compra-paso1">
+          <h3>1   DATOS PERSONALES</h3>
+          <form>
+            <label>Direccion de correo electronico</label>
+            <input type="email" name="emal"/>
+            <label>Contraseña</label>
+            <input type="password" name="password">
+            <button type="submit" value="CONTINUAR">CONTINUAR</button>
+          </form>
+        </div>
+        <div class="compra-paso2">
+          <h3>2   DIRECCIONES</h3>
+          <form>
+            <label>Nombre</label>
+            <input type="text" name="nombre"/>
+            <label>Apellido</label>
+            <input type="number" name="apellido"/>
+            <label>DNI</label>
+            <input type="text" name="DNI"/>
+            <label>Direccion(Barrio, Piso, Dpto)</label>
+            <input type="text" name="direccion">
+            <label>Codido postal</label>
+            <input type="text" name="cp">
+            <label>Ciudad</label>
+            <input type="text" name="ciudad">
+            <label>Provincia</label>
+            <select name="provincia">
+              <option value="Buenos Aires">Buenos Aires</option>
+              <option value="Catamarca">Catamarca</option>
+              <option value="Chaco">Chaco</option>
+              <option value="Chubut">Chubut</option>
+              <option value="Cordoba">Cordoba</option>
+              <option value="Corrientes">Corrientes</option>
+              <option value="Entre Rios">Entre Rios</option>
+              <option value="Formosa">Formosa</option>
+              <option value="Jujuy">Jujuy</option>
+              <option value="La Pampa">La Pampa</option>
+              <option value="La Rioja">La Rioja</option>
+              <option value="Mendoza">Mendoza</option>
+              <option value="Misiones">Misiones</option>
+              <option value="Neuquen">Neuquen</option>
+              <option value="Rio Negro">Rio Negro</option>
+              <option value="Salta">Salta</option>
+              <option value="San Juan">San Juan</option>
+              <option value="San Luis">San Luis</option>
+              <option value="Santa Cruz">Santa Cruz</option>
+              <option value="Santa Fe">Santa Fe</option>
+              <option value="Santiago del Estero">Santiago del Estero</option>
+              <option value="Tierra del Fuego">Tierra del Fuego</option>
+              <option value="Tucuman">Tucuman</option>
+            </select>
+            <label>Whatsapp</label>
+            <input type="tel" name="whats"/>
+            <button type="reset" value="CANCELAR">CANCELAR</button>
+            <button type="submit" value="CONTINUAR">CONTINUAR</button>
+          </form>
+        </div>
+        <div class="compra-paso3">
+          <h3>3   METODO DE ENVIO</h3>
+          <form>
+            <label>Selecciona la opcion que prefieras:</label>
+            <input type="radio" name="envio" value="retiro en tienda">
+            <i class="fa-solid fa-store"></i> Retiro en tienda </input>
+            <input type="radio" name="envio" value="envio a domicilio">
+            <i class="fa-solid fa-truck-fast"></i> Envio a domicilio </input>
+            <button type="submit" value="CONTINUAR">CONTINUAR</button>
+          </form>
+        </div>
+        <div class="compra-paso4">
+          <h3>4   METODO DE PAGO</h3>
+          <input type="radio" name="pago" value="efectivo"> 
+          <i class="fa-solid fa-money-bill"></i> Efectivo</input>
+          <input type="radio" name="pago" value="tarjeta">
+          <i class="fa-regular fa-credit-card"></i> Tarjeta</input>
+          <button type="submit" value="CONTINUAR">FINALIZAR</button>
+          </div>
+
+      </div>
+    </main>
+    <footer class="footer-flex">
+      <div class="footer-div">
+        <h4>Medios de pago</h4>
+        <ul class="footer-MP" type="none">
+          <li><i class="fa-solid fa-credit-card"></i> Tarjeta de credito</li>
+          <li>
+            <i class="fa-solid fa-money-bill-wave"></i> Dinero en efectivo
+          </li>
+        </ul>
+      </div>
+      <div class="footer-div">
+        <h4>Medios de envio</h4>
+        <ul class="footer-ME" type="none">
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+        </ul>
+      </div>
+      <div class="footer-div">
+        <h4>Nuestras redes sociales</h4>
+        <ul class="footer-RS" type="none">
+          <li class="footer-RS-items"><i class="fa-brands fa-facebook"></i></li>
+          <li class="footer-RS-items">
+            <i class="fa-brands fa-instagram"></i>
+          </li>
+          <li class="footer-RS-items"><i class="fa-brands fa-twitter"></i></li>
+        </ul>
+      </div>
+      <div class="footer-div">
+        <h4>contacto</h4>
+        <ul class="footer-contact" type="none">
+          <li><i class="fa-solid fa-phone"></i> 345*******</li>
+          <li><i class="fa-solid fa-envelope"></i> ****@gmail.com</li>
+          <li><i class="fa-brands fa-whatsapp"></i> 305*****</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
