@@ -191,3 +191,103 @@ nav p {
 }
 
 /*fin footer*/
+
+/*
+
+]=======( Carrito de compras )=======[
+
+*/
+
+.indicaciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  margin-bottom: 10px;
+}
+
+.listado-productos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.item {
+  background-color: white;
+  display: flex;
+  width: 90%;
+  padding: 10px;
+  align-items: center;
+}
+
+.item-imagen {
+  height: 150px;
+}
+
+.item-imagen img {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  object-fit: cover;
+}
+
+.item-opciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.item-opciones-eliminar {
+  font-size: 1.7rem;
+}
+
+.item-opciones-detalles-titulo {
+  font-weight: bold;
+}
+
+.item-opciones-detalles-precio {
+  font-size: 0.9rem;
+}
+
+.contenedor-botones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+  gap: 10px;
+}
+
+.carrito-boton {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+}
+
+.carrito-boton--cancelar {
+  background-color: black;
+  color: white;
+}
+
+.resumenCompra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  background-color: white;
+  margin: 10px 0;
+}
+
+.resumenCompra-detalles {
+  width: 100%;
+  border: black 1px solid;
+}
+
+.textBold {
+  font-weight: bold;
+}
