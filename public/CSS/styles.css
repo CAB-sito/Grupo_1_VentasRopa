@@ -75,13 +75,12 @@ nav p {
   45% {
     margin-left: -100%;
   }
-}
+
 
 .slider-item img{
     width: 100%;
     height: 40%;
     border-radius: 10px;
-    
 }
 
 @keyframes slaid{
@@ -256,8 +255,6 @@ nav p {
 
 
    /*Fin de footer*/
-
-
 }
 
   
@@ -361,3 +358,117 @@ nav p {
   font-weight: bold;
 }
  /* ]=======( Fin Carrito de compras )=======[ */
+
+  /*
+
+
+
+
+
+
+
+  ]=======( Inicio de detalles del producto )=======[
+
+*/
+.img-prod{
+    width: 80%;
+    height: 70%;
+    padding: 10%;
+    text-align: center;
+} 
+
+img{
+    border-top: solid 3px gray;
+   }
+
+.nom-del-producto{
+    padding-bottom: 10%;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    font-weight:bold;
+}
+
+div.ima-y-nom{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: white;
+    border: solid 30px #c3c3c3;
+    border-radius: 35px;
+    text-align: center;
+   transition: width, 0.5s;
+   box-sizing: border-box;
+}
+
+div.ima-y-nom:hover{
+box-shadow: 10px 5px 5px 5px gray;
+width: 56%;
+}
+
+
+
+i.fa-solid.fa-circle{
+   color: rgb(166, 149, 128);
+}
+
+.descripcion{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    font-size: 35px;
+    text-align: left;
+    justify-content: space-around;
+   /* border: solid 1px yellow;*/
+    padding: 30px 20px ;
+}
+
+
+.precio{
+    font-weight: bolder;
+}
+
+
+.talle,
+.cantidad{
+    display: block;
+   
+}
+
+.talle select,
+.cantidad input{
+    padding: 5px;   
+}
+
+.detalle_producto{
+    display: flex;
+    width: 95%;
+    justify-content: space-around;
+    text-align: left;
+}
+
+
+button{
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 5%;
+    padding: 5%;
+    border-radius: 20px;   
+}
+
+button{
+    transition-property: background-color,  font-size;
+    transition-duration: 0.5s;
+}
+
+button:hover{
+    font-size: 32px;
+    border-radius: 20px;
+    background-color: rgb(110, 107, 107);
+}
+
+ /* ]=======( Fin de detalles del producto  )=======[ */
+
+  /*
