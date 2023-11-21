@@ -188,6 +188,24 @@ nav p{
 
 /*fin footer*/
 @media (max-width:480px) {
+    /*navegador*/
+    .logo{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .nav-flex{
+        height: 25%;
+        display: block;
+    }
+    .nav-link{
+        display: block;
+        width: 90%;
+        
+    }
+
+
+    /*Fin de navegador*/
     /*produtos*/
    .container{
     display: block;
