@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/CSS/styles2.css">
+    <link rel="stylesheet" href="/CSS/styles3.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
@@ -23,7 +23,42 @@
 
     </header>
     <main>
-
+        <form action="" method="get" class="form">
+            <p class="text">Crear cuenta</p>
+            <div class="container">
+                <div class="nom-completo">
+                    <div class="nom">
+                        <p>NOMBRE</p>
+                        <input type="text" name="nombre" class="nom-campo" required>
+                    </div>
+                    <div class="ape">
+                        <p>APELLIDO</p>
+                        <input type="text" name="apellido" class="nom-campo" required>
+                    </div>
+                </div>
+                <p>CORREO ELECTRONICO</p>
+                <input type="email" name="email" class="campo-registro" required>
+                <p>Direccion</p>
+                <input type="text" name="direccion" class="campo-registro" required>
+                <div class="nom-completo">
+                    <div class="nom">
+                        <p>CIUDAD</p>
+                        <input type="text" name="nombre" class="nom-campo" required>
+                    </div>
+                    <div class="ape">
+                        <p>COD. POSTAL</p>
+                        <input type="text" name="apellido" class="nom-campo" required>
+                    </div>
+                </div> 
+                <p>CONTRASEÑA</p>
+                <input type="password" name="password" class="campo-registro" required>
+            </div>
+            <br>
+            <button type="submit">ENVIAR</button>
+            <a href="/login" class="recupera-contra">Ya tengo una cuenta</a>
+            <br>
+            
+        </form>
     </main>
     <footer class="footer-flex">
         <div class="footer-div">
