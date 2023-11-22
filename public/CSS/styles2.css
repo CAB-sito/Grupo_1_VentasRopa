@@ -44,6 +44,8 @@
 
   /*footer*/
 .footer-flex{
+    position: absolute;
+    bottom: 0;
     display: flex;
     justify-content: space-around;
     background-color: black;
