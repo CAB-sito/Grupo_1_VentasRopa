@@ -42,4 +42,6 @@ Listado de referentes del mercado:
 - https://lennonindumentaria.com.ar/ : tomamos como referencia este sitio por el diseño y por la variedad de productos que ofrece.
 
 
-TABLERO DE TRABAJO: https://trello.com/invite/b/sEd1SrzG/ATTI0620e3dd47ff92ec0b8488764adca3cfED06D3C2/grupo1
+TABLERO DE TRABAJO sprint 2: https://trello.com/invite/b/sEd1SrzG/ATTI0620e3dd47ff92ec0b8488764adca3cfED06D3C2/grupo1
+
+TABLERO DE TRABAJO sprint 3: https://trello.com/invite/b/9zjviYyf/ATTIce79143cbead07f615108f1b65ac1aa692B783C1/grupo1sprint3
