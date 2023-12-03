@@ -454,7 +454,7 @@ i.fa-solid.fa-circle{
 }
 
 
-button{
+.button_añadir{
     font-size: 30px;
     background-color: black;
     color: white;
@@ -464,12 +464,12 @@ button{
     border-radius: 20px;   
 }
 
-button{
+.button_añadir{
     transition-property: background-color,  font-size;
     transition-duration: 0.5s;
 }
 
-button:hover{
+.button_añadir:hover{
     font-size: 32px;
     border-radius: 20px;
     background-color: rgb(110, 107, 107);
@@ -477,4 +477,114 @@ button:hover{
 
  /* ]=======( Fin de detalles del producto  )=======[ */
 
+  /*
+  ]=======( Inicio login )=======[
+
+*/
+.form{
+  background-color:white;
+  width: 40%;
+  margin: 10% 30%;
+  padding: 10px;
+  border-radius: 20px;
+}
+.text{
+  text-align: center;
+  border-bottom: solid 1px black;
+}
+.login-container{
+  width: 70%;
+  margin: 2% 15%;
+}
+.campo-login{
+  width: 100%;
+  height: 25px;
+  margin-bottom: 5%;
+  background-color:#c3c3c3 ;
+  border-radius: 5px;
+}
+button{
+  margin-left: 15%;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.recupera-contra{
+  text-decoration: none;
+  color: black;
+  margin-left: 25%;
+}
+.crear-cuenta{
+  text-decoration: none;
+  color: black;
+  margin-left: 15%;
   
+}
+/*
+  ]=======( Fin de login )=======[
+
+*/
+/*
+  ]=======( Inicio de Registro)=======[
+
+*/
+.form{
+  background-color:white;
+  width: 40%;
+  margin: 10% 30%;
+  padding: 10px;
+  border-radius: 20px;
+}
+.text{
+  text-align: center;
+  border-bottom: solid 1px black;
+}
+.register-container{
+  width: 70%;
+  margin: 2% 15%;
+}
+.campo-registro{
+  width: 100%;
+  height: 25px;
+  margin-bottom: 5%;
+  background-color:#c3c3c3 ;
+  border-radius: 5px;
+}
+button{
+  margin-left: 15%;
+  margin-bottom: 10px;
+  
+}
+.recupera-contra{
+  text-decoration: none;
+  color: black;
+  margin-left: 25%;
+}
+.crear-cuenta{
+  text-decoration: none;
+  color: black;
+  margin-left: 15%;
+  
+}
+.nom-completo{
+  display: flex;
+  justify-content: space-around;
+}
+.nom-campo{
+  width: 90%;
+  height: 25px;
+  margin-bottom: 5%;
+  background-color:#c3c3c3 ;
+  border-radius: 5px;
+}
+.nom{
+  width: 50%;
+}
+.ape{
+  width: 50%;
+}
+
+
+/*
+  ]=======( Fin de Registro )=======[
+
+*/
