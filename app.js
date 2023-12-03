@@ -1,28 +1,22 @@
 const express = require("express");
-const path = require("path");
 const app = express();
-const paht = require("path");
+const indexRouter = require('./router/index');
+const loginRouter = require('./router/login');
+const regitroRouter = require('./router/registro');
+const productDtailRouter = require('./router/productDtail');
+const pruductCartRouter = require('./router/productCart');
+
+
+app.set('view engine','ejs'); 
 
 app.use(express.static("public"));
+app.use(indexRouter);
+app.use(loginRouter);
+app.use(regitroRouter);
+app.use(productDtailRouter);
+app.use(pruductCartRouter);
 
 app.listen(3000, () => {
   console.log("Servidor funcionando");
 });
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/index.html"));
-});
-app.get("/productCart", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/productCart.html"));
-});
 
-app.get("/productDtail", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/productDtail.html"));
-});
-
-app.get("/login", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/login.html"));
-});
-
-app.get("/registro", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/registro.html"));
-});
