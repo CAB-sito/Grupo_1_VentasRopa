@@ -12,6 +12,9 @@ app.use(indexRouter);
 app.use(loginRouter);
 app.use(regitroRouter);
 app.use("/product", productRouter);
+app.use((req, res) => {
+  res.status(404).send("Página no encontrada");
+});
 
 app.listen(3000, () => {
   console.log("Servidor funcionando");

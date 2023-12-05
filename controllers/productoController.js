@@ -30,8 +30,18 @@ const productos = [
 ];
 
 const productoController = {
+  index: (req, res) => {
+    res.redirect("/cart");
+  },
   detail: (req, res) => {
-    res.render("productDtail");
+    const id = req.params.id;
+    const producto = productos.find((el) => el.id == id);
+
+    if (!producto) {
+      return res.send("No se encontro el producto");
+    }
+
+    res.render("details", { producto: producto });
   },
   cart: (req, res) => {
     res.render("productCart");
