@@ -1,27 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="/CSS/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Clothes</title>
-</head>
-<body>
-    <header>
-        <nav class="nav-flex">
-            <img src="images/logo.jpeg" alt="" class="logo">
-            <a href="/" class="nav-link">home</a>
-            <a href="*" class="nav-link">Preguntas Frecuentes</a>
-            <a href="/login" class="nav-link">Login</a>
-            <a href="/productCart" class="nav-link"><i class="fa-solid fa-bag-shopping"></i></a>
-            
-        </nav>
 
-    </header>
+  <%- include('partials/head');-%>
+
+<body>
+    
+  <%- include('partials/header');-%>
+
     <main>
         <form action="" method="get" class="form">
             <p class="text">Crear cuenta</p>
@@ -60,43 +45,8 @@
             
         </form>
     </main>
-    <footer class="footer-flex">
-        <div class="footer-div">
-          <h4>Medios de pago</h4>
-          <ul class="footer-MP" type="none">
-            <li><i class="fa-solid fa-credit-card"></i> Tarjeta de credito</li>
-            <li>
-              <i class="fa-solid fa-money-bill-wave"></i> Dinero en efectivo
-            </li>
-          </ul>
-        </div>
-        <div class="footer-div">
-          <h4>Medios de envio</h4>
-          <ul class="footer-ME" type="none">
-            <li>item 1</li>
-            <li>item 2</li>
-            <li>item 3</li>
-          </ul>
-        </div>
-        <div class="footer-div">
-          <h4>Nuestras redes sociales</h4>
-          <ul class="footer-RS" type="none">
-            <li class="footer-RS-items"><i class="fa-brands fa-facebook"></i></li>
-            <li class="footer-RS-items">
-              <i class="fa-brands fa-instagram"></i>
-            </li>
-            <li class="footer-RS-items"><i class="fa-brands fa-twitter"></i></li>
-          </ul>
-        </div>
-        <div class="footer-div">
-          <h4>contacto</h4>
-          <ul class="footer-contact" type="none">
-            <li><i class="fa-solid fa-phone"></i> 345*******</li>
-            <li><i class="fa-solid fa-envelope"></i> ****@gmail.com</li>
-            <li><i class="fa-brands fa-whatsapp"></i> 305*****</li>
-          </ul>
-        </div>
-      </footer>
+    
+    <%- include('partials/footer');-%>
     
 </body>
 </html>
