@@ -4,14 +4,13 @@
   font-family: "Roboto", sans-serif;
 }
 /*body*/
-body{
-    font-size: 20px;
-    background-color: #c3c3c3;
+body {
+  font-size: 20px;
+  background-color: #c3c3c3;
 }
 
 /*fin body*/
 /*header*/
-
 
 .nav-flex {
   display: flex;
@@ -43,23 +42,22 @@ nav p {
 /*fin header*/
 /*main*/
 
-
 /*slider autamatico*/
-.slider{
-    overflow: hidden;
-    width: 90%;
-    height: 15em;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 3%; 
-    border-radius: 10px;
-    border: solid 1px black;
+.slider {
+  overflow: hidden;
+  width: 90%;
+  height: 15em;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 3%;
+  border-radius: 10px;
+  border: solid 1px black;
 }
-.slider ul{
-    height: 105em;
-    width: 400%;
-    display: flex;
-    animation:slaid 12s infinite;
+.slider ul {
+  height: 105em;
+  width: 400%;
+  display: flex;
+  animation: slaid 12s infinite;
 }
 @keyframes slaid {
   0% {
@@ -77,139 +75,144 @@ nav p {
   }
 }
 
-.slider-item img{
-    width: 100%;
-    height: 40%;
-    border-radius: 10px;
+.slider-item img {
+  width: 100%;
+  height: 40%;
+  border-radius: 10px;
 }
 
-@keyframes slaid{
-    0%{margin-left: 0%;}
-    20%{margin-left: 0%;}
+@keyframes slaid {
+  0% {
+    margin-left: 0%;
+  }
+  20% {
+    margin-left: 0%;
+  }
 
-    25%{margin-left: -100%;}
-    45%{margin-left: -100%;}
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
 
-    50%{margin-left: -200%;}
-    70%{margin-left: -200%;}
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
 
-    75%{margin-left: -300%;}
-    95%{margin-left: -300%;}
+  75% {
+    margin-left: -300%;
+  }
+  95% {
+    margin-left: -300%;
+  }
 }
 /*fin slider automatico*/
-.ofer{
- margin-top: 20px;
- margin-left: 2%;
+.ofer {
+  margin-top: 20px;
+  margin-left: 2%;
 }
-.container{
-    margin-top: 2%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
+.container {
+  margin-top: 2%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-.product{
-    width: 30%;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    background-color: white;
-    border-radius: 20px;
+.product {
+  width: 30%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 20px;
 }
-.product img{
-    border-radius: 30px;
-    width: 90%;
-    height: 75%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 5%;
-    border-radius: 20px;
+.product img {
+  border-radius: 30px;
+  width: 90%;
+  height: 75%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  border-radius: 20px;
 }
-.product-number{
-    border-top: solid 1px black;
-    font-size: 22px;
-    display: flex;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5px;
-    padding-top: 5px;
+.product-number {
+  border-top: solid 1px black;
+  font-size: 22px;
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5px;
+  padding-top: 5px;
 }
-.discount{
-    margin-left: 5%;
-    color: green;
+.discount {
+  margin-left: 5%;
+  color: green;
 }
-.description{
-    margin-left:100%;
-    margin-top: 5px;
-    padding-top: 5px;
-    font-size: 25px;
-    overflow: hidden;
-    transition: margin-left 0.5s;
+.description {
+  margin-left: 100%;
+  margin-top: 5px;
+  padding-top: 5px;
+  font-size: 25px;
+  overflow: hidden;
+  transition: margin-left 0.5s;
 }
-.product:hover .description{
-    margin-left: 5%;
+.product:hover .description {
+  margin-left: 5%;
 }
-.product:hover{
-    box-shadow: 10px 5px 5px gray;
-
+.product:hover {
+  box-shadow: 10px 5px 5px gray;
 }
 
 /*main*/
 /*footer*/
-.footer-flex{
-    display: flex;
-    justify-content: space-around;
-    background-color: black;
-    width: 100%;
-    height: 15%;
-    color: white;
-    
+.footer-flex {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  width: 100%;
+  height: 15%;
+  color: white;
 }
-.footer-div{
- text-align: center;
- width: 25%;
- margin: 4px 5px;
- padding: 8px 5px;
- box-sizing: border-box;
- 
+.footer-div {
+  text-align: center;
+  width: 25%;
+  margin: 4px 5px;
+  padding: 8px 5px;
+  box-sizing: border-box;
 }
-.footer-MP{
-    text-align: justify;
-    font-size: 16px;  
-    margin-left: 90px;
-    margin-top: 5px;
+.footer-MP {
+  text-align: justify;
+  font-size: 16px;
+  margin-left: 90px;
+  margin-top: 5px;
 }
-.footer-ME{
-    
-    display: flex;
-    justify-content: center;
-    font-size: 15px;  
+.footer-ME {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
 }
 
-.footer-RS{
-    display: flex;
-    justify-content: center;
+.footer-RS {
+  display: flex;
+  justify-content: center;
 }
-.footer-RS-items{
-    margin: 20px;
-    margin-top: 10px;
+.footer-RS-items {
+  margin: 20px;
+  margin-top: 10px;
 }
-.footer-contact{
-    text-align: justify;
-    font-size: 16px;  
-    margin-left: 100px;
-    margin-top: 5px;
+.footer-contact {
+  text-align: justify;
+  font-size: 16px;
+  margin-left: 100px;
+  margin-top: 5px;
 }
 
 /*fin footer*/
 
-
-
-
-
-  
-  
- /*
+/*
   ]=======( Inicio Carrito de compras )=======[
 
 */
@@ -307,9 +310,9 @@ nav p {
 .textBold {
   font-weight: bold;
 }
- /* ]=======( Fin Carrito de compras )=======[ */
+/* ]=======( Fin Carrito de compras )=======[ */
 
-  /*
+/*
 
 
 
@@ -320,148 +323,141 @@ nav p {
   ]=======( Inicio de detalles del producto )=======[
 
 */
-.img-prod{
-    width: 80%;
-    height: 70%;
-    padding: 10%;
-    text-align: center;
-} 
-
-img{
-    border-top: solid 3px gray;
-   }
-
-.nom-del-producto{
-    padding-bottom: 10%;
-    text-align: center;
-    width: 100%;
-    font-size: 40px;
-    font-weight:bold;
+.img-prod {
+  width: 80%;
+  height: 70%;
+  padding: 10%;
+  text-align: center;
 }
 
-div.ima-y-nom{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    background-color: white;
-    border: solid 30px #c3c3c3;
-    border-radius: 35px;
-    text-align: center;
-   transition: width, 0.5s;
-   box-sizing: border-box;
+img {
+  border-top: solid 3px gray;
 }
 
-div.ima-y-nom:hover{
-box-shadow: 10px 5px 5px 5px gray;
-width: 56%;
+.nom-del-producto {
+  padding-bottom: 10%;
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+  font-weight: bold;
 }
 
-
-
-i.fa-solid.fa-circle{
-   color: rgb(166, 149, 128);
+div.ima-y-nom {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: white;
+  border: solid 30px #c3c3c3;
+  border-radius: 35px;
+  text-align: center;
+  transition: width, 0.5s;
+  box-sizing: border-box;
 }
 
-.descripcion{
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    font-size: 35px;
-    text-align: left;
-    justify-content: space-around;
-   /* border: solid 1px yellow;*/
-    padding: 30px 20px ;
+div.ima-y-nom:hover {
+  box-shadow: 10px 5px 5px 5px gray;
+  width: 56%;
 }
 
-
-.precio{
-    font-weight: bolder;
+i.fa-solid.fa-circle {
+  color: rgb(166, 149, 128);
 }
 
+.descripcion {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  font-size: 35px;
+  text-align: left;
+  justify-content: space-around;
+  /* border: solid 1px yellow;*/
+  padding: 30px 20px;
+}
+
+.precio {
+  font-weight: bolder;
+}
 
 .talle,
-.cantidad{
-    display: block;
-   
+.cantidad {
+  display: block;
 }
 
 .talle select,
-.cantidad input{
-    padding: 5px;   
+.cantidad input {
+  padding: 5px;
 }
 
-.detalle_producto{
-    display: flex;
-    width: 95%;
-    justify-content: space-around;
-    text-align: left;
+.detalle_producto {
+  display: flex;
+  width: 95%;
+  justify-content: space-around;
+  text-align: left;
 }
 
-
-.button_añadir{
-    font-size: 30px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    margin: 5%;
-    padding: 5%;
-    border-radius: 20px;   
+.button_añadir {
+  font-size: 30px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: 5%;
+  padding: 5%;
+  border-radius: 20px;
 }
 
-.button_añadir{
-    transition-property: background-color,  font-size;
-    transition-duration: 0.5s;
+.button_añadir {
+  transition-property: background-color, font-size;
+  transition-duration: 0.5s;
 }
 
-.button_añadir:hover{
-    font-size: 32px;
-    border-radius: 20px;
-    background-color: rgb(110, 107, 107);
+.button_añadir:hover {
+  font-size: 32px;
+  border-radius: 20px;
+  background-color: rgb(110, 107, 107);
 }
 
- /* ]=======( Fin de detalles del producto  )=======[ */
+/* ]=======( Fin de detalles del producto  )=======[ */
 
-  /*
+/*
   ]=======( Inicio login )=======[
 
 */
-.form{
-  background-color:white;
+.form {
+  background-color: white;
   width: 40%;
   margin: 10% 30%;
   padding: 10px;
   border-radius: 20px;
 }
-.text{
+.text {
   text-align: center;
   border-bottom: solid 1px black;
 }
-.login-container{
+.login-container {
   width: 70%;
   margin: 2% 15%;
 }
-.campo-login{
+.campo-login {
   width: 100%;
   height: 25px;
   margin-bottom: 5%;
-  background-color:#c3c3c3 ;
+  background-color: #c3c3c3;
   border-radius: 5px;
 }
-button{
+button {
   margin-left: 15%;
   margin-bottom: 10px;
   margin-top: 20px;
 }
-.recupera-contra{
+.recupera-contra {
   text-decoration: none;
   color: black;
   margin-left: 25%;
 }
-.crear-cuenta{
+.crear-cuenta {
   text-decoration: none;
   color: black;
   margin-left: 15%;
-  
 }
 /*
   ]=======( Fin de login )=======[
@@ -471,62 +467,59 @@ button{
   ]=======( Inicio de Registro)=======[
 
 */
-.form{
-  background-color:white;
+.form {
+  background-color: white;
   width: 40%;
   margin: 10% 30%;
   padding: 10px;
   border-radius: 20px;
 }
-.text{
+.text {
   text-align: center;
   border-bottom: solid 1px black;
 }
-.register-container{
+.register-container {
   width: 70%;
   margin: 2% 15%;
 }
-.campo-registro{
+.campo-registro {
   width: 100%;
   height: 25px;
   margin-bottom: 5%;
-  background-color:#c3c3c3 ;
+  background-color: #c3c3c3;
   border-radius: 5px;
 }
-button{
+button {
   margin-left: 15%;
   margin-bottom: 10px;
-  
 }
-.recupera-contra{
+.recupera-contra {
   text-decoration: none;
   color: black;
   margin-left: 25%;
 }
-.crear-cuenta{
+.crear-cuenta {
   text-decoration: none;
   color: black;
   margin-left: 15%;
-  
 }
-.nom-completo{
+.nom-completo {
   display: flex;
   justify-content: space-around;
 }
-.nom-campo{
+.nom-campo {
   width: 90%;
   height: 25px;
   margin-bottom: 5%;
-  background-color:#c3c3c3 ;
+  background-color: #c3c3c3;
   border-radius: 5px;
 }
-.nom{
+.nom {
   width: 50%;
 }
-.ape{
+.ape {
   width: 50%;
 }
-
 
 /*
   ]=======( Fin de Registro )=======[
@@ -537,65 +530,78 @@ button{
   ]=======( Inicio de Mediaqueri )=======[
 
 */
-@media (max-width:480px) {
+@media (max-width: 480px) {
   /*navegador*/
-  .logo{
-      width: 90%;
-      margin-left: 5%;
-      margin-right: 5%;
+  .logo {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
-  .nav-flex{
-      height: 25%;
-      display: block;
+  .nav-flex {
+    height: 25%;
+    display: block;
   }
-  .nav-link{
-      display: block;
-      width: 90%;
-      
+  .nav-link {
+    display: block;
+    width: 90%;
   }
-
 
   /*Fin de navegador*/
   /*produtos*/
- .container{
-  display: block;
-  padding-bottom: 10px;
- }
- .product{
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding-bottom: 10px;
- }
- .description{
-  margin-left: 5%;
- }
+  .container {
+    display: block;
+    padding-bottom: 10px;
+  }
+  .product {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 10px;
+  }
+  .description {
+    margin-left: 5%;
+  }
   /*Fin de produtos*/
- /*footer*/
- .footer-flex{
-  display: block;
-  padding-top: 10px;
- }
- footer h4{
-  font-size: 16px;
-  border-top: solid white 1px;
- }
- .footer-div{
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
- }
- .footer-MP{
-  margin-left: 120px;
- }
- .footer-RS-items{
-  margin: 10px;
- }
- /*Fin de footer*/
-
+  /*footer*/
+  .footer-flex {
+    display: block;
+    padding-top: 10px;
+  }
+  footer h4 {
+    font-size: 16px;
+    border-top: solid white 1px;
+  }
+  .footer-div {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .footer-MP {
+    margin-left: 120px;
+  }
+  .footer-RS-items {
+    margin: 10px;
+  }
+  /*Fin de footer*/
 }
 
 /*
-  ]=======( Inicio de Mediaqueri )=======[
+  ]=======( Inicio crearProducto  )=======[ 
 
 */
+
+.principal {
+  padding: 8px;
+  padding-bottom: 20px;
+}
+
+.formCrearProducto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.titulo {
+  text-align: center;
+}
