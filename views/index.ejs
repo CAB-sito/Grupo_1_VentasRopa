@@ -19,34 +19,16 @@
         </ul>
       </article>
       <section class="container">
+        <% for(let i=0; i < productos.length;i++){%>
         <article class="product">
-
-          <a href="productDtail"><img src="/images/ropa1.jpg" alt=""></a>
+          <a href="productDtail"><img src="/images/<%= productos.image %>" alt=""></a>
           <div class="product-number" > 
-            <p class="price">$230.000</p>
-            <p class="discount">20% off</p>
+            <p class="price">$<%=productos.precio%></p>
+            <p class="discount"><%=productos.descuento%>% off</p>
           </div>
-          <h4 class="description">Producto</h4>
+          <h4 class="description"><%=productos.nombre%></h4>
         </article>
-
-        <article class="product">
-          <img src="/images/ropa2.jpg" alt="">
-          
-          <div class="product-number">
-            <p class="price">$230.000</p>
-            <p class="discount">20% off</p>
-          </div>
-          <h4 class="description">Producto</h4>
-        </article>
-
-        <article class="product">
-          <img src="/images/ropa3.jpg" alt="">
-          <div class="product-number">
-            <p class="price">$230.000</p>
-            <p class="discount">20% off</p>
-          </div>
-          <h4 class="description">Producto</h4>
-        </article>
+        <% } %>
 
         <%- include('partials/ofertas');-%>
 
