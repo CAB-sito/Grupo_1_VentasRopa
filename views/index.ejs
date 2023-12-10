@@ -21,12 +21,12 @@
       <section class="container">
         <% for(let i=0; i < productos.length;i++){%>
         <article class="product">
-          <a href="productDtail"><img src="/images/<%= productos.image %>" alt=""></a>
+          <a href="productDtail"><img src="/images/<%=productos[i].image%>" alt=""></a>
           <div class="product-number" > 
-            <p class="price">$<%=productos.precio%></p>
-            <p class="discount"><%=productos.descuento%>% off</p>
+            <p class="price">$<%=productos[i].precio%></p>
+            <p class="discount"><%=productos[i].descuento%>% off</p>
           </div>
-          <h4 class="description"><%=productos.nombre%></h4>
+          <h4 class="description"><%=productos[i].nombre%></h4>
         </article>
         <% } %>
 
