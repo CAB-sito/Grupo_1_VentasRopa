@@ -45,3 +45,5 @@ Listado de referentes del mercado:
 TABLERO DE TRABAJO sprint 2: https://trello.com/invite/b/sEd1SrzG/ATTI0620e3dd47ff92ec0b8488764adca3cfED06D3C2/grupo1
 
 TABLERO DE TRABAJO sprint 3: https://trello.com/invite/b/9zjviYyf/ATTIce79143cbead07f615108f1b65ac1aa692B783C1/grupo1sprint3
+
+TABLERO DE TRABAJO sprint 4: https://trello.com/invite/b/vIb0uDow/ATTIdb1207e598c81c91579d5f2d820c0c82D14B1C57/grupo1sprint4
