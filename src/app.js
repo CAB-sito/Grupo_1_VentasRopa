@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 const mainRouter = require("./router/main")
 const productRouter = require("./router/producto");
-
-app.set("view engine", "ejs");
+const path = require('path');
 
 app.use(express.static("public"));
+
+app.set("view engine", "ejs");
+app.set("views",path.resolve(__dirname, "./views"));
 
 app.use(mainRouter);
 app.use("/product", productRouter);
