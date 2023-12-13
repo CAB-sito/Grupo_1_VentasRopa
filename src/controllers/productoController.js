@@ -1,3 +1,11 @@
+const fs = require(`fs`);
+
+
+function productList(){
+  return JSON.parse(fs.readFileSync("product.json", "utf-8"));
+}
+
+
 const productos = [
   {
     id: 1,

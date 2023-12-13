@@ -1,6 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const mainController = require('../controllers/mainController');
+const multer = require('multer');
+const path = require('path');
+
+let storage = multer.diskStorage({
+    destination:(req, file, cb)=>{
+        cb(null, path.resolve(__dirname,"./images/imageUser"))
+    },
+    filename:(req, file, cb)=>{
+        cb(null, file.filename+"-"+Date.now())
+    }
+
+})
+
+const update = muter({storage:storage});
+
 
 const routes ={
     home:"/",
