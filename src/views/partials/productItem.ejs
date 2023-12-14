@@ -11,7 +11,9 @@
     <% if (!edit) { %>
     <i class="fa-regular fa-trash-can item-opciones-eliminar"></i>
     <% } else { %>
-    <i class="fa-solid fa-pencil item-opciones-eliminar"></i>
+    <a href="/producto/modificar/<%= producto.id %>"
+      ><i class="fa-solid fa-pencil item-opciones-eliminar"></i
+    ></a>
     <% } %>
   </div>
 </article>

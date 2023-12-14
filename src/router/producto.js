@@ -13,13 +13,13 @@ let storage = multer.diskStorage({
   },
 });
 
-const update = muter({ storage: storage });
+const update = multer({ storage: storage });
 
 router.get("/", controller.index);
 router.get("/detail/:id", controller.detail);
 router.get("/cart", controller.cart);
 router.get("/crear", controller.crear);
-router.post("/modificar/listado", controller.listar);
+router.get("/modificar/listado", controller.listar);
 router.get("/modificar/:id", controller.modificar);
 
 module.exports = router;

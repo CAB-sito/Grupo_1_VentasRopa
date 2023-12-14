@@ -4,7 +4,39 @@ function productList() {
   return JSON.parse(fs.readFileSync("product.json", "utf-8"));
 }
 
-const productos = [
+const productos = require("../data/product.json");
+
+/*
+[
+  {
+    id: 1,
+    name: "Jean skinny",
+    precio: 15200,
+    descuento: 10,
+    imagen: "jean-skinny.jpg",
+  },
+  {
+    id: 2,
+    name: "Short jean",
+    precio: 13100,
+    descuento: 10,
+    imagen: "short-jean.jpg",
+  },
+  {
+    id: 3,
+    name: "Top Morley",
+    precio: 4000,
+    descuento: 10,
+    imagen: "top-morley.jpg",
+  },
+  {
+    id: 4,
+    name: "Vestido crepe",
+    precio: 6500,
+    descuento: 10,
+    imagen: "vestido-crepe.jpg",
+  },
+];[
   {
     id: 1,
     name: "Jean skinny",
@@ -34,6 +66,7 @@ const productos = [
     imagen: "vestido-crepe.jpg",
   },
 ];
+*/
 
 const productoController = {
   index: (req, res) => {
