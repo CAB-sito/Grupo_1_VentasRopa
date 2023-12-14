@@ -1,92 +1,102 @@
 [
-    {
-        "id": 1,
-        "nombreProducto": "producto 1",
-        "descripcion": "material",
-        "imagenDeProducto": "http://dummyimage.com/196x100.png/ff4444/ffffff",
-        "categoria": "visitado",
-        "color": "Green",
-        "precio": 89
-    },
-    {
-        "id": 2,
-        "nombreProducto": "producto 1",
-        "descripcion": "material",
-        "imagenDeProducto": "http://dummyimage.com/177x100.png/ff4444/ffffff",
-        "categoria": "visitado",
-        "color": "Purple",
-        "precio": 89
-    },
-    {
-        "id": 3,
-        "nombreProducto": "producto 1",
-        "descripcion": "material",
-        "imagenDeProducto": "http://dummyimage.com/209x100.png/cc0000/ffffff",
-        "categoria": "visitado",
-        "color": "Orange",
-        "precio": 91
-    },
-    {
-        "id": 4,
-        "nombreProducto": "producto 1",
-        "descripcion": "material",
-        "imagenDeProducto": "http://dummyimage.com/151x100.png/5fa2dd/ffffff",
-        "categoria": "visitado",
-        "color": "Pink",
-        "precio": 24
-    },
-    {
-        "id": 5,
-        "nombreProducto": "producto 1",
-        "descripcion": "material",
-        "imagenDeProducto": "http://dummyimage.com/136x100.png/ff4444/ffffff",
-        "categoria": "visitado",
-        "color": "Red",
-        "precio": 31
-    },
-    {
-        "id": 6,
-        "nombreProducto": "producto 1",
-        "descripcion": "material",
-        "imagenDeProducto": "http://dummyimage.com/226x100.png/dddddd/000000",
-        "categoria": "visitado",
-        "color": "Blue",
-        "precio": 92
-    },
-    {
-        "id": 7,
-        "nombreProducto": "producto 1",
-        "descripcion": "material",
-        "imagenDeProducto": "http://dummyimage.com/242x100.png/ff4444/ffffff",
-        "categoria": "visitado",
-        "color": "Blue",
-        "precio": 79
-    },
-    {
-        "id": 8,
-        "nombreProducto": "producto 1",
-        "descripcion": "material",
-        "imagenDeProducto": "http://dummyimage.com/245x100.png/ff4444/ffffff",
-        "categoria": "visitado",
-        "color": "Violet",
-        "precio": 7
-    },
-    {
-        "id": 9,
-        "nombreProducto": "producto 1",
-        "descripcion": "material",
-        "imagenDeProducto": "http://dummyimage.com/211x100.png/ff4444/ffffff",
-        "categoria": "visitado",
-        "color": "Goldenrod",
-        "precio": 19
-    },
-    {
-        "id": 10,
-        "nombreProducto": "producto 1",
-        "descripcion": "material",
-        "imagenDeProducto": "http://dummyimage.com/122x100.png/5fa2dd/ffffff",
-        "categoria": "visitado",
-        "color": "Yellow",
-        "precio": 49
-    }
+  {
+    "id": 1,
+    "nombreProducto": "producto 1",
+    "descripcion": "material",
+    "imagenDeProducto": "http://dummyimage.com/196x100.png/ff4444/ffffff",
+    "categoria": "visitado",
+    "color": "rojo",
+    "precio": 89,
+    "talle": "xl"
+  },
+  {
+    "id": 2,
+    "nombreProducto": "producto 1",
+    "descripcion": "material",
+    "imagenDeProducto": "http://dummyimage.com/177x100.png/ff4444/ffffff",
+    "categoria": "visitado",
+    "color": "morado",
+    "precio": 89,
+    "talle": "xl"
+  },
+  {
+    "id": 3,
+    "nombreProducto": "producto 1",
+    "descripcion": "material",
+    "imagenDeProducto": "http://dummyimage.com/209x100.png/cc0000/ffffff",
+    "categoria": "visitado",
+    "color": "Orange",
+    "precio": 91,
+    "talle": "xl"
+  },
+  {
+    "id": 4,
+    "nombreProducto": "producto 1",
+    "descripcion": "material",
+    "imagenDeProducto": "http://dummyimage.com/151x100.png/5fa2dd/ffffff",
+    "categoria": "visitado",
+    "color": "Pink",
+    "precio": 24,
+    "talle": "xl"
+  },
+  {
+    "id": 5,
+    "nombreProducto": "producto 1",
+    "descripcion": "material",
+    "imagenDeProducto": "http://dummyimage.com/136x100.png/ff4444/ffffff",
+    "categoria": "visitado",
+    "color": "Red",
+    "precio": 31,
+    "talle": "xl"
+  },
+  {
+    "id": 6,
+    "nombreProducto": "producto 1",
+    "descripcion": "material",
+    "imagenDeProducto": "http://dummyimage.com/226x100.png/dddddd/000000",
+    "categoria": "visitado",
+    "color": "Blue",
+    "precio": 92,
+    "talle": "xl"
+  },
+  {
+    "id": 7,
+    "nombreProducto": "producto 1",
+    "descripcion": "material",
+    "imagenDeProducto": "http://dummyimage.com/242x100.png/ff4444/ffffff",
+    "categoria": "visitado",
+    "color": "Blue",
+    "precio": 79,
+    "talle": "xl"
+  },
+  {
+    "id": 8,
+    "nombreProducto": "producto 1",
+    "descripcion": "material",
+    "imagenDeProducto": "http://dummyimage.com/245x100.png/ff4444/ffffff",
+    "categoria": "visitado",
+    "color": "Violet",
+    "precio": 7,
+    "talle": "xl"
+  },
+  {
+    "id": 9,
+    "nombreProducto": "producto 1",
+    "descripcion": "material",
+    "imagenDeProducto": "http://dummyimage.com/211x100.png/ff4444/ffffff",
+    "categoria": "visitado",
+    "color": "Goldenrod",
+    "precio": 19,
+    "talle": "xl"
+  },
+  {
+    "id": 10,
+    "nombreProducto": "producto 1",
+    "descripcion": "material",
+    "imagenDeProducto": "http://dummyimage.com/122x100.png/5fa2dd/ffffff",
+    "categoria": "visitado",
+    "color": "Yellow",
+    "precio": 49,
+    "talle": "xl"
+  }
 ]

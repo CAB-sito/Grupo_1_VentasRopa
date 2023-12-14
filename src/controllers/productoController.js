@@ -1,10 +1,8 @@
 const fs = require(`fs`);
 
-
-function productList(){
+function productList() {
   return JSON.parse(fs.readFileSync("product.json", "utf-8"));
 }
-
 
 const productos = [
   {
@@ -57,8 +55,17 @@ const productoController = {
   crear: (req, res) => {
     res.render("crearProducto");
   },
+  listar: (req, res) => {
+    res.render("listarProducto", { listaProductos: productos });
+  },
   modificar: (req, res) => {
-    res.render("modificarProducto", { listaProductos: productos });
+    const id = req.params.id;
+    const producto = productos.find((el) => el.id == id);
+
+    if (!producto) {
+      return res.send("No se encontro el producto");
+    }
+    res.render("modificarProducto", { producto: producto });
   },
 };
 

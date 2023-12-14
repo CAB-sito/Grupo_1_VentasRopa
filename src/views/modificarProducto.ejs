@@ -8,26 +8,27 @@
       <h1 class="titulo">Modificar producto</h1>
       <form class="formCrearProducto" action="/crear-producto" method="POST">
         <label for="title">Nombre del producto</label>
-        <input type="text" name="nombre" id="nombreDelProducto" />
+        <input type="text" name="nombre" id="nombreDelProducto" value="<%= producto.nombreProducto %>" />
         <label for="description">Descripción</label>
-        <input type="text" name="descripción" id="descripciónDelProducto" />
+        <input type="text" name="descripción" id="descripciónDelProducto" value="<%= producto.descripcion %>" />
         <label for="imagen">Imagen</label>
         <input type="file" name="imagen" id="imagenDelProducto" />
         <label for="price">Precio</label>
-        <input type="number" name="precio" id="precioDelProducto" />
+        <input type="number" name="precio" id="precioDelProducto"  value="<%= producto.precio %>"/>
         <label for="color">Color</label>
         <select name="color" id="colorDelProducto">
-          <option value="rojo">Rojo</option>
-          <option value="azul">Azul</option>
-          <option value="verde">Verde</option>
-          <option value="amarillo">Amarillo</option>
-          <option value="negro">Negro</option>
-          <option value="blanco">Blanco</option>
-          <option value="gris">Gris</option>
+          <option value="rojo" <%= producto.color == "rojo" ? "selected" : "" %>>Rojo</option>
+          <option value="azul" <%= producto.color == "azul" ? "selected" : "" %>>Azul</option>
+          <option value="verde" <%= producto.color == "verde" ? "selected" : "" %>>Verde</option>
+          <option value="morado" <%= producto.color == "morado" ? "selected" : "" %>>Morado</option>
+          <option value="amarillo" <%= producto.color == "amarillo" ? "selected" : "" %>>Amarillo</option>
+          <option value="negro" <%= producto.color == "negro" ? "selected" : "" %>>Negro</option>
+          <option value="blanco" <%= producto.color == "blanco" ? "selected" : "" %>>Blanco</option>
+          <option value="gris" <%= producto.color == "gris" ? "selected" : "" %>>Gris</option>
         </select>
         <label for="size">Talla</label>
-        <input type="text" name="talla" id="tallaDelProducto" />
-        <input type="submit" value="Crear Producto" />
+        <input type="text" name="talla" id="tallaDelProducto" value="<%= producto.talle %>" />
+        <input type="submit" value="Modificar Producto" />
       </form>
     </main>
 
