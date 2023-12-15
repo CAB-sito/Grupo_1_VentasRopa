@@ -1,17 +1,17 @@
 <article class="item">
   <picture class="item-imagen">
-    <img src="/images/<%= producto.imagen %>" alt="imagenJean" />
+    <img src="/images/products/<%= producto.image %>" alt="imagenJean" />
   </picture>
   <div class="item-opciones">
     <div class="item-opciones-detalles">
       <p class="item-opciones-detalles-titulo"><%= producto.name %></p>
-      <p class="item-opciones-detalles-precio">$<%= producto.precio %></p>
-      <p class="discount"><%= producto.descuento %>%</p>
+      <p class="item-opciones-detalles-precio">$<%= producto.price %></p>
+      <p class="discount"><%= producto.discount %>%</p>
     </div>
     <% if (!edit) { %>
     <i class="fa-regular fa-trash-can item-opciones-eliminar"></i>
     <% } else { %>
-    <a href="/producto/modificar/<%= producto.id %>"
+    <a href="/products/<%= producto.id %>/edit"
       ><i class="fa-solid fa-pencil item-opciones-eliminar"></i
     ></a>
     <% } %>

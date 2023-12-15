@@ -6,15 +6,15 @@
 
     <main class="principal">
       <h1 class="titulo">Modificar producto</h1>
-      <form class="formCrearProducto" action="/crear-producto" method="POST">
+      <form class="formCrearProducto" action="ACTUALIZAR ESTA URL" method="AGREGAR PUT">
         <label for="title">Nombre del producto</label>
-        <input type="text" name="nombre" id="nombreDelProducto" value="<%= producto.nombreProducto %>" />
+        <input type="text" name="nombre" id="nombreDelProducto" value="<%= producto.name %>" />
         <label for="description">Descripción</label>
-        <input type="text" name="descripción" id="descripciónDelProducto" value="<%= producto.descripcion %>" />
+        <input type="text" name="descripción" id="descripciónDelProducto" value="<%= producto.description %>" />
         <label for="imagen">Imagen</label>
         <input type="file" name="imagen" id="imagenDelProducto" />
         <label for="price">Precio</label>
-        <input type="number" name="precio" id="precioDelProducto"  value="<%= producto.precio %>"/>
+        <input type="number" name="precio" id="precioDelProducto"  value="<%= producto.price %>"/>
         <label for="color">Color</label>
         <select name="color" id="colorDelProducto">
           <option value="rojo" <%= producto.color == "rojo" ? "selected" : "" %>>Rojo</option>
@@ -26,8 +26,8 @@
           <option value="blanco" <%= producto.color == "blanco" ? "selected" : "" %>>Blanco</option>
           <option value="gris" <%= producto.color == "gris" ? "selected" : "" %>>Gris</option>
         </select>
-        <label for="size">Talla</label>
-        <input type="text" name="talla" id="tallaDelProducto" value="<%= producto.talle %>" />
+        <label for="descuento">Descuento</label>
+        <input type="number" min="0" max="100" name="descuento" id="descuentoDelProducto" value="<%= producto.discount %>" />
         <input type="submit" value="Modificar Producto" />
       </form>
     </main>

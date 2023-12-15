@@ -13,64 +13,15 @@
         <p class="pos-body5px textBold">Carrito de compras</p>
       </section>
       <section class="listado-productos">
-        <article class="item">
-          <picture class="item-imagen">
-            <img src="/images/jean-skinny.jpg" alt="imagenJean" />
-          </picture>
-          <div class="item-opciones">
-            <div class="item-opciones-detalles">
-              <p class="item-opciones-detalles-titulo">Jean Skinny</p>
-              <p class="item-opciones-detalles-precio">$15.200</p>
-              <input type="number" name="quantity" value="1" min="1" max="10" />
-            </div>
-            <i class="fa-regular fa-trash-can item-opciones-eliminar"></i>
-          </div>
-        </article>
-        <article class="item">
-          <picture class="item-imagen">
-            <img src="/images/short-jean.jpg" alt="imagenShrortJean" />
-          </picture>
-          <div class="item-opciones">
-            <div class="item-opciones-detalles">
-              <p class="item-opciones-detalles-titulo">Short Jean</p>
-              <p class="item-opciones-detalles-precio">$13.100</p>
-              <input type="number" name="quantity" value="1" min="1" max="10" />
-            </div>
-            <i class="fa-regular fa-trash-can item-opciones-eliminar"></i>
-          </div>
-        </article>
-        <article class="item">
-          <picture class="item-imagen">
-            <img src="/images/top-morley.jpg" alt="imagenTopMorley" />
-          </picture>
-          <div class="item-opciones">
-            <div class="item-opciones-detalles">
-              <p class="item-opciones-detalles-titulo">Top Morley</p>
-              <p class="item-opciones-detalles-precio">$4.000</p>
-              <input type="number" name="quantity" value="1" min="1" max="10" />
-            </div>
-            <i class="fa-regular fa-trash-can item-opciones-eliminar"></i>
-          </div>
-        </article>
-        <article class="item">
-          <picture class="item-imagen">
-            <img src="/images/vestido-crepe.jpg" alt="imagenJean" />
-          </picture>
-          <div class="item-opciones">
-            <div class="item-opciones-detalles">
-              <p class="item-opciones-detalles-titulo">Vestido Crepe</p>
-              <p class="item-opciones-detalles-precio">$6.500</p>
-              <input type="number" name="quantity" value="1" min="1" max="10" />
-            </div>
-            <i class="fa-regular fa-trash-can item-opciones-eliminar"></i>
-          </div>
-        </article>
+        <% listaProductos.forEach(producto => { %>
+          <%- include('partials/productItem', { producto: producto, edit : false }); %>
+        <% }); %>
       </section>
       <section class="resumenCompra">
         <p class="resumenCompra-titulo textBold">RESUMEN DE LA COMPRA</p>
         <div class="resumenCompra-detalles">
-        <p class="resumenCompra-cantidadArticulos">4 articulos</p">
-        <p class="resumenCompra-total textBold">Total: $38.800</p>
+        <p class="resumenCompra-cantidadArticulos"><%= listaProductos.length %> articulos</p">
+        <p class="resumenCompra-total textBold">Total: $<%= listaProductos.reduce((sum, producto) => sum + (producto.price * (1 - producto.discount / 100)), 0) %></p>
         </div>
       </section>
       <section class="contenedor-botones">

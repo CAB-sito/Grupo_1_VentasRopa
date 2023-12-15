@@ -6,7 +6,7 @@
 
     <main class="principal">
       <h1 class="titulo">Crear producto</h1>
-      <form class="formCrearProducto" action="/crear-producto" method="POST" >
+      <form class="formCrearProducto" action="/crear-producto" method="POST">
         <label for="title">Nombre del producto</label>
         <input type="text" name="nombre" id="nombreDelProducto" />
         <label for="description">Descripción</label>
@@ -25,8 +25,14 @@
           <option value="blanco">Blanco</option>
           <option value="gris">Gris</option>
         </select>
-        <label for="size">Talla</label>
-        <input type="text" name="talla" id="tallaDelProducto" />
+        <label for="descuento">Descuento</label>
+        <input
+          type="number"
+          min="0"
+          max="100"
+          name="descuento"
+          id="descuentoDelProducto"
+        />
         <input type="submit" value="Crear Producto" />
       </form>
     </main>
