@@ -426,17 +426,20 @@ i.fa-solid.fa-circle {
   ]=======( Inicio login )=======[
 
 */
-.form {
+.form-login {
   background-color: white;
-  width: 40%;
+  width: 43%;
   margin: 10% 30%;
   padding: 10px;
   border-radius: 20px;
 }
-.text {
+.text-login {
+  text-decoration: none;
   text-align: center;
   border-bottom: solid 1px black;
+  font-size: 40px;
 }
+
 .login-container {
   width: 70%;
   margin: 2% 15%;
@@ -445,24 +448,53 @@ i.fa-solid.fa-circle {
   width: 100%;
   height: 25px;
   margin-bottom: 5%;
-  background-color: #c3c3c3;
+  background-color: #d0cdcd;
   border-radius: 5px;
+  padding: 2px;
 }
-button {
+
+.enviar_login{
+  font-size: 30px;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
   margin-left: 15%;
   margin-bottom: 10px;
   margin-top: 20px;
 }
+
+.enviar_login{
+  transition-property:background-color, font-size, border-radius;
+  transition-duration: 0.5s;
+}
+
+.enviar_login:hover {
+font-size: 32px;
+border-radius: 20px;
+background-color: rgb(63, 61, 61);
+}
+
 .recupera-contra {
   text-decoration: none;
   color: black;
   margin-left: 25%;
+  transition-property: text-decoration;
+  transition-duration: 0.1s;
 }
+.recupera-contra:hover{
+  text-decoration:underline;
+}
+
 .crear-cuenta {
   text-decoration: none;
   color: black;
   margin-left: 15%;
 }
+.crear-cuenta:hover{
+  text-decoration:underline;
+}
+
 /*
   ]=======( Fin de login )=======[
 
@@ -473,14 +505,16 @@ button {
 */
 .form {
   background-color: white;
-  width: 40%;
+  width: 43%;
   margin: 10% 30%;
   padding: 10px;
   border-radius: 20px;
 }
-.text {
+.text-register {
+  text-decoration: none;
   text-align: center;
   border-bottom: solid 1px black;
+  font-size: 40px;
 }
 .register-container {
   width: 70%;
@@ -488,19 +522,39 @@ button {
 }
 .campo-registro {
   width: 100%;
+  font-size: 18px;
   height: 25px;
-  margin-bottom: 5%;
-  background-color: #c3c3c3;
+  margin-bottom: 5px;
+  background-color: #dcd9d9;
   border-radius: 5px;
+  padding: 2px 2px;
 }
-button {
+.button-register {
+  font-size: 30px;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
   margin-left: 15%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 5px;
 }
+
+.button-register {
+  transition-property:background-color, font-size, border-radius;
+  transition-duration: 0.5s;
+}
+.button-register:hover {
+font-size: 31px;
+border-radius: 20px;
+background-color: rgb(23, 23, 23);
+}
+
 .recupera-contra {
   text-decoration: none;
   color: black;
   margin-left: 25%;
+  font-size: 25px;
 }
 .crear-cuenta {
   text-decoration: none;
@@ -509,20 +563,25 @@ button {
 }
 .nom-completo {
   display: flex;
-  justify-content: space-around;
+ justify-content: space-around;
+ 
 }
 .nom-campo {
-  width: 90%;
+  width: 100%;
   height: 25px;
   margin-bottom: 5%;
-  background-color: #c3c3c3;
+  background-color: #dcd9d9;
   border-radius: 5px;
+  font-size: 18px;
+  padding: 2px 2px;
 }
 .nom {
   width: 50%;
+  margin-right: 11px;
 }
 .ape {
   width: 50%;
+  margin-left: 11px;
 }
 
 /*
