@@ -31,7 +31,7 @@ const productos = [
 
 const controller = {
     home:(req, res)=>{
-        res.render('index',{productos:productos});
+        res.render('index',{productos: productos});
     },
     register:(req, res)=>{
         res.render('registro');
