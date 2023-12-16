@@ -21,7 +21,7 @@
       <section class="container">
         <% for(let i=0; i < productos.length;i++){%>
         <article class="product">
-          <a href="productDtail"><img src="/images/<%=productos[i].image%>" alt=""></a>
+          <a href="/products/:id"><img src="/images/<%=productos[i].image%>" alt=""></a>
           <div class="product-number" > 
             <p class="price">$<%=productos[i].precio%></p>
             <p class="discount"><%=productos[i].descuento%>% off</p>
