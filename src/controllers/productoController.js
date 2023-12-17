@@ -1,5 +1,5 @@
 const fs = require(`fs`);
-const path = require('path')
+const path = require("path");
 
 /*function productList() {
   return JSON.parse(fs.readFileSync("product.json", "utf-8"));
@@ -7,9 +7,8 @@ const path = require('path')
 
 const productos = require("../data/product.json");*/
 
-const productsFilePath = path.join(__dirname, '../data/product.json')
-const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
-
+const productsFilePath = path.join(__dirname, "../data/product.json");
+const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const productoController = {
   index: (req, res) => {
@@ -29,9 +28,27 @@ const productoController = {
   cart: (req, res) => {
     res.render("productCart", { listaProductos: productos });
   },
-  crear: (req, res) => {
+  crear:(req, res) => {
     res.render("crearProducto");
   },
+
+  guardarProducto: (req, res) => {
+    const newProduct = {
+      id: productos[productos.length-1].id + 1,
+      name: req.body.name,
+      marca: req.body.marca,
+      category: req.body.category,
+      description: req.body.description,
+      color: req.body.color,
+      price: req.body.price,
+      discount: req.body.discount,
+    };
+    productos.push(newProduct);
+    res.redirect("/");
+
+    fs.writeFileSync(productsFilePath,JSON.stringify(productos))
+  },
+
   listar: (req, res) => {
     res.render("listarProducto", { listaProductos: productos });
   },
