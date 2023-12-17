@@ -28,13 +28,13 @@ const productoController = {
   cart: (req, res) => {
     res.render("productCart", { listaProductos: productos });
   },
-  crear:(req, res) => {
+  crear: (req, res) => {
     res.render("crearProducto");
   },
 
   guardarProducto: (req, res) => {
     const newProduct = {
-      id: productos[productos.length-1].id + 1,
+      id: productos[productos.length - 1].id + 1,
       name: req.body.name,
       marca: req.body.marca,
       category: req.body.category,
@@ -46,7 +46,7 @@ const productoController = {
     productos.push(newProduct);
     res.redirect("/");
 
-    fs.writeFileSync(productsFilePath,JSON.stringify(productos))
+    fs.writeFileSync(productsFilePath, JSON.stringify(productos));
   },
 
   listar: (req, res) => {
@@ -62,21 +62,20 @@ const productoController = {
     res.render("modificarProducto", { producto: producto });
   },
 
-  editar:(req,res)=>{
-    const id = req.params.id;
-    productos.find((producto)=>{
-      if(producto.id == id){
-      productos.name = req.body.name,
-      productos.marca = req.body.marca,
-      productos.category = req.body.category,
-      productos.description = req.body.description,
-      productos.color = req.body.color,
-      productos.price = req.body.price,
-      productos.discount = req.body.discount
+  editar: (req, res) => {
+    const id = req.params.id
+    productos.forEach((producto) => {
+      if (producto.id == id) {
+          producto.name = req.body.name,
+           producto.description = req.body.description,
+          producto.price = req.body.price,
+           producto.color = req.body.color,
+           producto.discount = req.body.discount
       }
-    })
-    res.redirect("/products")
-    fs.readFileSync(productsFilePath, JSON.stringify(productos))
-  }
-}
+    });
+    fs.whriteFileSync(productsFilePath, JSON.stringify(productos));
+    res.redirect("/products");
+   
+  },
+};
 module.exports = productoController;
