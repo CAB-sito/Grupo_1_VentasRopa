@@ -63,18 +63,18 @@ const productoController = {
   },
 
   editar: (req, res) => {
-    const id = req.params.id
+    const id = req.params.id;
     productos.forEach((producto) => {
       if (producto.id == id) {
-          producto.name = req.body.name,
-           producto.description = req.body.description,
-          producto.price = req.body.price,
-           producto.color = req.body.color,
-           producto.discount = req.body.discount
-      }
+          producto.name = req.body.name;
+           producto.description = req.body.description;
+          producto.price = req.body.price;
+           producto.color = req.body.color;
+           producto.discount = req.body.discount;
+      };
     });
     fs.whriteFileSync(productsFilePath, JSON.stringify(productos));
-    res.redirect("/products");
+    res.redirect("products");
    
   },
 };
