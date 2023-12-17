@@ -20,7 +20,7 @@ const update = multer({ storage: storage });
 router.get("/", controller.listar);
 router.get("/cart", controller.cart);
 router.get("/create", controller.crear);
-router.get("/:id", controller.detail);
+router.get("/detail/:id", controller.detail);
 router.get("/:id/edit", controller.modificar);
 // Añadir ruta post /
 // Añadir ruta put /:id

@@ -4,7 +4,7 @@
     <p class="nom-del-producto"><%= producto.name %></p>
   </div>
   <div class="descripcion">
-    <p>Marca: Lines</p>
+    <p>Marca: <%= producto.marca %></p>
     <p>Color <i class="fa-solid fa-circle"></i></p>
     <p class="precio">$<%= producto.price %></p>
     <form action="/producto" method="post">

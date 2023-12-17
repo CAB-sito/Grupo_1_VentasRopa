@@ -1,37 +1,15 @@
 const fs = require('fs');
+const path = require('path')
 
-function userList(){
-    return JSON.parse(fs.readFileSync("user.json", "utf-8"));
-  }
-
-const productos = [
-    {
-        id: 1,
-        nombre: "producto1",
-        precio: 10000,
-        descuento: 10,
-        image:"ropa1.jpg"
-    },
-    {
-        id: 2,
-        nombre: "producto2",
-        precio: 3000,
-        descuento: 0,
-        image:"ropa2.jpg"
-    },
-    {
-        id: 3,
-        nombre: "producto3",
-        precio: 30500,
-        descuento: 20,
-        image:"ropa3.jpg"
-    }
-]
+const productsFilePath = path.join(__dirname, '../data/product.json')
+const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
 
 
 const controller = {
     home:(req, res)=>{
-        res.render('index',{productos: productos});
+        const productosDestacados = productos.filter((product) => product.category == "productos destacados");
+        const ofertas = productos.filter((product) => product.category == "oferta");
+        res.render('index',{ productosDestacados, ofertas });
     },
     register:(req, res)=>{
         res.render('registro');

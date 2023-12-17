@@ -1,10 +1,15 @@
 const fs = require(`fs`);
+const path = require('path')
 
-function productList() {
+/*function productList() {
   return JSON.parse(fs.readFileSync("product.json", "utf-8"));
 }
 
-const productos = require("../data/product.json");
+const productos = require("../data/product.json");*/
+
+const productsFilePath = path.join(__dirname, '../data/product.json')
+const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
+
 
 const productoController = {
   index: (req, res) => {
@@ -20,6 +25,7 @@ const productoController = {
 
     res.render("details", { producto: producto });
   },
+
   cart: (req, res) => {
     res.render("productCart", { listaProductos: productos });
   },

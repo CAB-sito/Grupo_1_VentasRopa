@@ -19,18 +19,23 @@
         </ul>
       </article>
       <section class="container">
-        <% for(let i=0; i < productos.length;i++){%>
+        <% productosDestacados.forEach((product) => { %>
         <article class="product">
-          <a href="/products/:id"><img src="/images/<%=productos[i].image%>" alt=""></a>
+          <a href="/products/detail/<%=product.id %>"> 
+            <img src="/images/products/<%=product.image%> " alt="">  </a>
           <div class="product-number" > 
-            <p class="price">$<%=productos[i].precio%></p>
-            <p class="discount"><%=productos[i].descuento%>% off</p>
+            <p class="price">$<%=product.price%></p>
+            <p class="discount"><%=product.discount%>% off</p>
           </div>
-          <h4 class="description"><%=productos[i].nombre%></h4>
+          <h4 class="description"><%=product.name%></h4>
         </article>
-        <% } %>
+     
+        <% }) %>
+      </section>
+     
 
-        <%- include('partials/ofertas');-%>
+
+        <%- include('partials/ofertas',  {ofertas});-%>
 
     </main>
     <%- include('partials/footer');-%>
