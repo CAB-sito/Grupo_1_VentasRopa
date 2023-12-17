@@ -61,6 +61,22 @@ const productoController = {
     }
     res.render("modificarProducto", { producto: producto });
   },
-};
 
+  editar:(req,res)=>{
+    const id = req.params.id;
+    productos.find((producto)=>{
+      if(producto.id == id){
+      productos.name = req.body.name,
+      productos.marca = req.body.marca,
+      productos.category = req.body.category,
+      productos.description = req.body.description,
+      productos.color = req.body.color,
+      productos.price = req.body.price,
+      productos.discount = req.body.discount
+      }
+    })
+    res.redirect("/products")
+    fs.readFileSync(productsFilePath, JSON.stringify(productos))
+  }
+}
 module.exports = productoController;

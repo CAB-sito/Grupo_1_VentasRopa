@@ -6,7 +6,7 @@
 
     <main class="principal">
       <h1 class="titulo">Modificar producto</h1>
-      <form class="formCrearProducto" action="ACTUALIZAR ESTA URL" method="AGREGAR PUT">
+      <form class="formCrearProducto" action="/products/:id/?_method=PUT" method="POST">
         <label for="title">Nombre del producto</label>
         <input type="text" name="nombre" id="nombreDelProducto" value="<%= producto.name %>" />
         <label for="description">Descripción</label>

@@ -23,8 +23,9 @@ router.get("/create", controller.crear);
 router.get("/detail/:id", controller.detail);
 router.get("/:id/edit", controller.modificar);
 // Añadir ruta post /
-router.post("/guardarProducto", controller.guardarProducto)
+router.post("/", controller.guardarProducto)
 // Añadir ruta put /:id
+router.put("/:id", controller.editar)
 // Añadir ruta delete /:id
 
 module.exports = router;

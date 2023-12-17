@@ -117,5 +117,12 @@
     "description": "de jean",
     "color": "verde",
     "price": "8500"
+  },
+  {
+    "id": 14,
+    "name": "camisa",
+    "description": "de jean",
+    "color": "azul",
+    "price": "5800"
   }
 ]
