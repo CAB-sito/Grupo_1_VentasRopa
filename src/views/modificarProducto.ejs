@@ -31,9 +31,11 @@
         <input type="submit" value="Modificar Producto" />
       </form>
       
+      <div class="botonEliminar">
       <form class="formEliminarProducto"  method="POST" action="/products/<%= producto.id %>?_method=DELETE">
-        <button type="submit" value="Eliminar Producto"> Eliminar articulo </button>
+        <button  class="eliminar"  type="submit" value="Eliminar Producto"> Eliminar articulo </button>
       </form>
+    </div>
 
     </main>
 

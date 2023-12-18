@@ -82,10 +82,14 @@ const productoController = {
 
   eliminar: (req,res) =>{
     const id = req.params.id;
-   productos.forEach((product)=>{
+   /*productos.forEach((product)=>{
     if (product.id == id) {
       delete product
-   }})
+   }})*/
+
+   productos.filter((product)=>{
+    return product.id !== id
+   })
     res.redirect("/products")
   },
 
