@@ -76,10 +76,21 @@ const productoController = {
       };
     });
     //fs.whriteFileSync(productsFilePath, JSON.stringify(productos));
-    res.redirect("/products");
-   
+    res.redirect("/products")
+
   },
+
+  eliminar: (req,res) =>{
+    const id = req.params.id;
+   productos.forEach((product)=>{
+    if (product.id == id) {
+      delete product
+   }})
+    res.redirect("/products")
+  },
+
 };
+
 module.exports = productoController;
 
 
