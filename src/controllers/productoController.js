@@ -1,14 +1,16 @@
-const fs = require(`fs`);
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-/*function productList() {
-  return JSON.parse(fs.readFileSync("product.json", "utf-8"));
+
+
+//const productos = require("../data/product.json");
+
+const productsFilePath = path.resolve(__dirname, "../data/product.json");
+function productList() {
+  return JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 }
-
-const productos = require("../data/product.json");*/
-
-const productsFilePath = path.join(__dirname, "../data/product.json");
-const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+//const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const productos = productList();
 
 const productoController = {
   index: (req, res) => {
@@ -44,9 +46,9 @@ const productoController = {
       discount: req.body.discount,
     };
     productos.push(newProduct);
-    res.redirect("/");
+    res.redirect("/products");
 
-    fs.writeFileSync(productsFilePath, JSON.stringify(productos));
+    //fs.writeFileSync(productsFilePath, JSON.stringify(productos));
   },
 
   listar: (req, res) => {
@@ -73,9 +75,39 @@ const productoController = {
            producto.discount = req.body.discount;
       };
     });
-    fs.whriteFileSync(productsFilePath, JSON.stringify(productos));
-    res.redirect("products");
+    //fs.whriteFileSync(productsFilePath, JSON.stringify(productos));
+    res.redirect("/products");
    
   },
 };
 module.exports = productoController;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
