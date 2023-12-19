@@ -27,6 +27,6 @@ router.post("/", controller.guardarProducto)
 // Añadir ruta put /:id
 router.put("/:id", controller.editar)
 // Añadir ruta delete /:id
-router.put("/:id", controller.eliminar)
+router.delete("/:id", controller.eliminar)
 
 module.exports = router;

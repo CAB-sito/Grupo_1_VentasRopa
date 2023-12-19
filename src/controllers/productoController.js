@@ -1,7 +1,5 @@
-const fs = require('fs');
-const path = require('path');
-
-
+const fs = require("fs");
+const path = require("path");
 
 //const productos = require("../data/product.json");
 
@@ -68,61 +66,31 @@ const productoController = {
     const id = req.params.id;
     productos.forEach((producto) => {
       if (producto.id == id) {
-          producto.name = req.body.name;
-           producto.description = req.body.description;
-          producto.price = req.body.price;
-           producto.color = req.body.color;
-           producto.discount = req.body.discount;
-      };
+        producto.name = req.body.name;
+        producto.description = req.body.description;
+        producto.price = req.body.price;
+        producto.color = req.body.color;
+        producto.discount = req.body.discount;
+      }
     });
-    //fs.whriteFileSync(productsFilePath, JSON.stringify(productos));
-    res.redirect("/products")
 
+    fs.whriteFileSync(productsFilePath, JSON.stringify(productos));
+
+    res.redirect("/products");
   },
 
-  eliminar: (req,res) =>{
+  eliminar: (req, res) => {
     const id = req.params.id;
-   /*productos.forEach((product)=>{
+    /*productos.forEach((product)=>{
     if (product.id == id) {
       delete product
    }})*/
 
-   productos.filter((product)=>{
-    return product.id !== id
-   })
-    res.redirect("/products")
+    productos.filter((product) => {
+      return product.id !== id;
+    });
+    res.redirect("/products");
   },
-
 };
 
 module.exports = productoController;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
