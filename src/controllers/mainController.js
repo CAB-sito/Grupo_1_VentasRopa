@@ -8,7 +8,7 @@ const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"))
 const controller = {
     home:(req, res)=>{
         const productosDestacados = productos.filter((product) => product.category == "productos destacados");
-        const ofertas = productos.filter((product) => product.category == "oferta");
+        const ofertas = productos.filter((product) => product.category == "Oferta");
         res.render('index',{ productosDestacados, ofertas });
     },
     register:(req, res)=>{

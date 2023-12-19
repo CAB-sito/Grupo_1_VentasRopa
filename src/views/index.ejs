@@ -33,9 +33,25 @@
         <% }) %>
       </section>
      
+      <h1 class="ofer">Ofertas</h1>
+      <section class="container">
+        <% ofertas.forEach((product) => { %>
+        <article class="product">
+          <a href="/products/detail/<%=product.id %>"> 
+            <img src="/images/products/<%=product.image%> " alt="">  </a>
+          <div class="product-number" > 
+            <p class="price">$<%=product.price%></p>
+            <p class="discount"><%=product.discount%>% off</p>
+          </div>
+          <h4 class="description"><%=product.name%></h4>
+        </article>
+     
+        <% }) %>
+      </section>
 
 
-        <%- include('partials/ofertas',  {ofertas});-%>
+
+      
 
     </main>
     <%- include('partials/footer');-%>
