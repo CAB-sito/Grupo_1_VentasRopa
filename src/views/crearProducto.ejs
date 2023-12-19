@@ -5,18 +5,23 @@
     <%- include('partials/header.ejs') %>
 
     <main class="principal">
-      <h1 class="titulo">Crear producto</h1>
+      
       <form class="formCrearProducto" action="/products" method="POST">
-        <label for="title">Nombre del producto</label>
-        <input type="text" name="name" id="nombreDelProducto" />
-        <label for="description">Descripción</label>
-        <input type="text" name="description" id="descripciónDelProducto" />
-        <label for="imagen">Imagen</label>
-        <input type="file" name="imagen" id="imagenDelProducto" />
-        <label for="price">Precio</label>
-        <input type="number" name="price" id="precioDelProducto" />
-        <label for="color">Color</label>
-        <select name="color" id="colorDelProducto">
+      
+        <h1 class="titulo">CREAR PRODUCTO</h1>
+     
+        <label for="title">NOMBRE DEL PRODUCTO</label>
+        <input class="espacio-completar" type="text" name="name" id="nombreDelProducto" />
+        <label for="description">DESCRIPCIÓN</label>
+        <input class="espacio-completar" type="text" name="description" id="descripciónDelProducto" />
+        <label for="description">MARCA</label>
+        <input class="espacio-completar" type="text" name="marca" id="marcaDelProducto" />
+        <label for="imagen">IMÁGEN</label>
+        <input class="espacio-completar" type="file" name="imagen" id="imagenDelProducto" />
+        <label for="price">PRECIO</label>
+        <input class="espacio-completar" type="number" name="price" id="precioDelProducto" />
+        <label for="color">COLOR</label>
+        <select class="espacio-completar"   name="color" id="colorDelProducto">
           <option value="rojo">Rojo</option>
           <option value="azul">Azul</option>
           <option value="verde">Verde</option>
@@ -25,15 +30,15 @@
           <option value="blanco">Blanco</option>
           <option value="gris">Gris</option>
         </select>
-        <label for="discount">Descuento</label>
-        <input
+        <label for="discount">DESCUENTO</label>
+        <input class="espacio-completar"
           type="number"
           min="0"
           max="100"
           name="descuento"
           id="descuentoDelProducto"
         />
-        <input type="submit" value="Crear Producto" />
+        <input class="boton-añadir" type="submit" value="SUBIR PRODUCTO" />
       </form>
     </main>
 

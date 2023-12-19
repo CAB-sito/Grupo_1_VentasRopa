@@ -5,18 +5,22 @@
     <%- include('partials/header.ejs') %>
 
     <main class="principal">
-      <h1 class="titulo">Modificar producto</h1>
+     
       <form class="formCrearProducto"  method="POST" action="/products/edit?_method=PUT" >
-        <label for="title">Nombre del producto</label>
-        <input type="text" name="nombre" id="nombreDelProducto" value="<%= producto.name %>" />
-        <label for="description">Descripción</label>
-        <input type="text" name="descripción" id="descripciónDelProducto" value="<%= producto.description %>" />
-        <label for="imagen">Imagen</label>
-        <input type="file" name="imagen" id="imagenDelProducto" />
-        <label for="price">Precio</label>
-        <input type="number" name="precio" id="precioDelProducto"  value="<%= producto.price %>"/>
-        <label for="color">Color</label>
-        <select name="color" id="colorDelProducto">
+        <h1 class="titulo">MODIFICAR PRODUCTO </h1>
+
+        <label for="title">NOMBRE DEL PRODUCTO</label>
+        <input class="espacio-completar" type="text" name="nombre" id="nombreDelProducto" value="<%= producto.name %>" />
+        <label for="description">DESCRIPCIÓN</label>
+        <input class="espacio-completar" type="text" name="descripción" id="descripciónDelProducto" value="<%= producto.description %>" />
+        <label for="marca">MARCA</label>
+        <input class="espacio-completar" type="text" name="marca" id="marcaDelProducto" value="<%= producto.marca %>" />
+        <label for="imagen">IMÁGEN</label>
+        <input class="espacio-completar" type="file" name="imagen" id="imagenDelProducto" />
+        <label for="price">PRECIO</label>
+        <input class="espacio-completar" type="number" name="precio" id="precioDelProducto"  value="<%= producto.price %>"/>
+        <label for="color">COLOR</label>
+        <select class="espacio-completar" name="color" id="colorDelProducto">
           <option value="rojo" <%= producto.color == "rojo" ? "selected" : "" %>>Rojo</option>
           <option value="azul" <%= producto.color == "azul" ? "selected" : "" %>>Azul</option>
           <option value="verde" <%= producto.color == "verde" ? "selected" : "" %>>Verde</option>
@@ -26,14 +30,14 @@
           <option value="blanco" <%= producto.color == "blanco" ? "selected" : "" %>>Blanco</option>
           <option value="gris" <%= producto.color == "gris" ? "selected" : "" %>>Gris</option>
         </select>
-        <label for="descuento">Descuento</label>
-        <input type="number" min="0" max="100" name="descuento" id="descuentoDelProducto" value="<%= producto.discount %>" />
-        <input type="submit" value="Modificar Producto" />
+        <label for="descuento">DESCUENTO</label>
+        <input class="espacio-completar" type="number" min="0" max="100" name="descuento" id="descuentoDelProducto" value="<%= producto.discount %>" />
+        <input class="boton-añadir" type="submit" value="CONFIRMAR MODIFICACIÓN" />
       </form>
       
       <div class="botonEliminar">
       <form class="formEliminarProducto"  method="POST" action="/products/<%= producto.id %>?_method=DELETE">
-        <button  class="eliminar"  type="submit" value="Eliminar Producto"> Eliminar articulo </button>
+        <button  class="eliminar"  type="submit" value="Eliminar Producto"> ELIMINAR ARTICULO</button>
       </form>
     </div>
 

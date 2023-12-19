@@ -658,16 +658,65 @@ background-color: rgb(23, 23, 23);
   padding-bottom: 20px;
 }
 
+.titulo{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 .formCrearProducto {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  border: 1px solid black;
+ background-color: white;
+ width: 70%;
+ margin: 2% 15%;
+ padding-top: 20px;
+ border-radius: 20px;
+}
+
+.espacio-completar{
+  width: 60%;
+ /* background-color: bisque;*/
+  font-size: 23px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color: #dcd9d9;
+  text-align: center;
 }
 
 .titulo {
   text-align: center;
 }
+.boton-añadir,
+.eliminar{
+  margin-bottom: 3%;
+  font-size: 30px;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.boton-añadir,
+.eliminar{
+  transition-property:background-color, font-size, border-radius;
+  transition-duration: 0.5s;
+}
+
+.boton-añadir:hover{
+  font-size: 31px;
+border-radius: 20px;
+background-color: rgb(6, 6, 6);
+}
+
+.eliminar:hover{
+  font-size: 31px;
+border-radius: 20px;
+background-color: rgb(6, 6, 6);
+}
+
 
 .botonEliminar{
   text-align: center;
