@@ -1,5 +1,5 @@
 const fs = require("fs");
-const path = require("path");
+const path = require('path');
 
 //const productos = require("../data/product.json");
 
@@ -8,7 +8,7 @@ function productList() {
   return JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 }
 //const productos = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-const productos = productList();
+
 
 const productoController = {
   index: (req, res) => {
@@ -33,6 +33,7 @@ const productoController = {
   },
 
   guardarProducto: (req, res) => {
+    const productos = productList();
     const newProduct = {
       id: productos[productos.length - 1].id + 1,
       name: req.body.name,
@@ -46,13 +47,15 @@ const productoController = {
     productos.push(newProduct);
     res.redirect("/products");
 
-    //fs.writeFileSync(productsFilePath, JSON.stringify(productos));
+    fs.writeFileSync(productsFilePath, JSON.stringify(productos));
   },
 
   listar: (req, res) => {
+    const productos = productList();
     res.render("listarProducto", { listaProductos: productos });
   },
   modificar: (req, res) => {
+    const productos = productList();
     const id = req.params.id;
     const producto = productos.find((el) => el.id == id);
 
@@ -63,6 +66,7 @@ const productoController = {
   },
 
   editar: (req, res) => {
+    const productos = productList();
     const id = req.params.id;
     productos.forEach((producto) => {
       if (producto.id == id) {
@@ -74,22 +78,21 @@ const productoController = {
       }
     });
 
-    fs.whriteFileSync(productsFilePath, JSON.stringify(productos));
+    fs.writeFileSync(productsFilePath, JSON.stringify(productos));
 
     res.redirect("/products");
   },
 
   eliminar: (req, res) => {
+    console.log("Entro a eliminar");
+    const productos = productList();
     const id = req.params.id;
-    /*productos.forEach((product)=>{
-    if (product.id == id) {
-      delete product
-   }})*/
-
-    productos.filter((product) => {
-      return product.id !== id;
-    });
+    
+   const productosNuevos = productos.filter((product) => product.id != id);
+    console.log(productos);
+    fs.writeFileSync(productsFilePath, JSON.stringify(productosNuevos));
     res.redirect("/products");
+    
   },
 };
 
