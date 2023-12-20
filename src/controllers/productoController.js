@@ -15,6 +15,7 @@ const productoController = {
     res.redirect("/cart");
   },
   detail: (req, res) => {
+    const productos = productList();
     const id = req.params.id;
     const producto = productos.find((el) => el.id == id);
 
@@ -26,6 +27,7 @@ const productoController = {
   },
 
   cart: (req, res) => {
+    const productos = productList();
     res.render("productCart", { listaProductos: productos });
   },
   crear: (req, res) => {
