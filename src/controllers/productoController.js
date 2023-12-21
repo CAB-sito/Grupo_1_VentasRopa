@@ -36,10 +36,17 @@ const productoController = {
 
   guardarProducto: (req, res) => {
     const productos = productList();
+    let imagen;
+    if(req.file){
+      imagen = req.file.filename;
+    }else{
+      imagen = "default.png";
+    }
     const newProduct = {
       id: productos[productos.length - 1].id + 1,
       name: req.body.name,
       marca: req.body.marca,
+      image: imagen,
       category: req.body.category,
       description: req.body.description,
       color: req.body.color,
@@ -72,6 +79,7 @@ const productoController = {
     const id = req.params.id;
     productos.forEach((producto) => {
       if (producto.id == id) {
+  
         producto.name = req.body.name;
         producto.description = req.body.description;
         producto.price = req.body.price;

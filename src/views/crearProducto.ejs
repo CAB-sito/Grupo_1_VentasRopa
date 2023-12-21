@@ -6,7 +6,7 @@
 
     <main class="principal">
       
-      <form class="formCrearProducto" action="/products" method="POST">
+      <form class="formCrearProducto" action="/products" method="POST" enctype="multipart/form-data">
       
         <h1 class="titulo">CREAR PRODUCTO</h1>
      
@@ -35,7 +35,7 @@
           type="number"
           min="0"
           max="100"
-          name="descuento"
+          name="discount"
           id="descuentoDelProducto"
         />
         <input class="boton-añadir" type="submit" value="SUBIR PRODUCTO" />
