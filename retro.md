@@ -23,6 +23,6 @@ Sprint 3:
 Sprint 4:
 1.Reuniones diarias.
 2.Mas implementacion de git branch.
-3.Distribucion de tarea de forma equitativa.
-4.
+3.Distribucion de tarea de forma equitativa, Consultar a los compañeros de grupo cuando se tiene problemas con una parte del trabajo.
+4.Mezcla de idiomas a la hora de asignar un nombre a las variables.
 5.Dejar de trabajal  directamente en la rama principal.
