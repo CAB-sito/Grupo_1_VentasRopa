@@ -21,8 +21,15 @@ Sprint 3:
 5.Dejar de trabajal  directamente en la rama principal.
 
 Sprint 4:
-1.Reuniones diarias.
+1.Reuniones semanales.
 2.Mas implementacion de git branch.
 3.Distribucion de tarea de forma equitativa, Consultar a los compañeros de grupo cuando se tiene problemas con una parte del trabajo.
 4.Mezcla de idiomas a la hora de asignar un nombre a las variables.
-5.Dejar de trabajal  directamente en la rama principal.
+5.Dejar de trabajar directamente en la rama principal.
+
+Sprint 5:
+1.Reuniones semanales, Trabajar y revisar las ramas merge con nombre del integrante .
+2.Mantener actualizado el tablero de trello.
+3.Distribucion de tarea de forma equitativa, Consultar a los compañeros de grupo cuando se tiene problemas con una parte del trabajo.
+4.Mezcla de idiomas a la hora de asignar un nombre a las variables.
+5.Dejar de trabajar directamente en la rama principal.
