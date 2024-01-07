@@ -77,11 +77,19 @@ const productoController = {
   editar: (req, res) => {
     const productos = productList();
     const id = req.params.id;
+    let imagen;
+    if(req.file){
+      imagen = req.file.filename;
+    }else{
+      imagen = "default.png";
+    }
     productos.forEach((producto) => {
       if (producto.id == id) {
   
         producto.name = req.body.name;
         producto.description = req.body.description;
+        producto.marca = req.body.marca;
+        producto.image = imagen;
         producto.price = req.body.price;
         producto.color = req.body.color;
         producto.discount = req.body.discount;
@@ -91,6 +99,7 @@ const productoController = {
     fs.writeFileSync(productsFilePath, JSON.stringify(productos));
 
     res.redirect("/products");
+    console.log(productos);
   },
 
   eliminar: (req, res) => {

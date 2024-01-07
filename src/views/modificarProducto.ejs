@@ -6,7 +6,7 @@
 
     <main class="principal">
      
-      <form class="formCrearProducto"  method="POST" action="/products/<%= producto.id %>?_method=PUT" >
+      <form class="formCrearProducto"  method="POST" action="/products/<%= producto.id %>?_method=PUT" enctype="multipart/form-data">
         <h1 class="titulo">MODIFICAR PRODUCTO </h1>
 
         <label for="title">NOMBRE DEL PRODUCTO</label>
@@ -16,7 +16,7 @@
         <label for="marca">MARCA</label>
         <input class="espacio-completar" type="text" name="marca" id="marcaDelProducto" value="<%= producto.marca %>" />
         <label for="imagen">IMÁGEN</label>
-        <input class="espacio-completar" type="file" name="image" id="imagenDelProducto" />
+        <input class="espacio-completar" type="file" name="image" id="imagenDelProducto" value="<%= producto.image %>"/>
         <label for="price">PRECIO</label>
         <input class="espacio-completar" type="number" name="price" id="precioDelProducto"  value="<%= producto.price %>"/>
         <label for="color">COLOR</label>
