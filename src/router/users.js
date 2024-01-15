@@ -17,4 +17,6 @@ let storage = multer.diskStorage({
 
 const update = multer({ storage: storage });
 
-router.get("/perfil", controller.usuario);
+router.get("/perfil/:id", controller.usuario);
+
+module.exports = router;

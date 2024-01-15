@@ -3,6 +3,7 @@ const app = express();
 const methodOverride = require("method-override");
 const mainRouter = require("./router/main");
 const productRouter = require("./router/producto");
+const usersRouter = require("./router/users");
 const path = require("path");
 
 app.use(methodOverride("_method"));
@@ -15,6 +16,7 @@ app.set("views", path.resolve(__dirname, "./views"));
 
 app.use(mainRouter);
 app.use("/products", productRouter);
+app.use(usersRouter);
 app.use((req, res) => {
   res.status(404).send("Página no encontrada");
 });

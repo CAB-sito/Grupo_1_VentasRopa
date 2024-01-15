@@ -721,3 +721,47 @@ background-color: rgb(6, 6, 6);
 .botonEliminar{
   text-align: center;
 }
+
+/* Vista del perfil*/
+#user-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.user-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  padding: 20px;
+  max-width: 800px; /* Ajusta el ancho máximo según tu preferencia */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.user-photo-container {
+  max-width: 30%;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-right: 2%;
+}
+
+.user-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.user-details {
+  flex: 1;
+  padding: 20px;
+}
+
+h2, h3, p {
+  margin: 0 0 10px 0;
+}
+/*Fin de la vista de perfil*/
