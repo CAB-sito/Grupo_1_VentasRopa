@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require('path');
+const bcrypt = require('bcryptjs');
 
 const userFilePath = path.resolve(__dirname, "../data/user.json");
 function userList() {
@@ -21,7 +22,33 @@ const userController = {
         }
     
         res.render("perfil", { usuario: usuario });
-      }
+      },
+
+     
+  registrarUsuario: (req, res) => {
+    const usuarios = userList();
+    let imagen;
+    if(req.file){
+      imagen = req.file.filename;
+    }else{
+      imagen = "defaultUsers.jpg";
+    }
+    const newUsuario = {
+      id: usuarios[usuarios.length - 1].id + 1 ,
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      email: req.body.email,
+      direccion: req.body.direccion,
+      ciudad: req.body.ciudad,
+      codigoPostal: req.body.codigoPostal,
+      imagen: imagen,
+      password:bcrypt.hashSync(req.body.password, 10),
+    };
+    usuarios.push(newUsuario);
+    res.redirect("/");
+
+    fs.writeFileSync(userFilePath , JSON.stringify(usuarios));
+  },
 }
 
 module.exports = userController;

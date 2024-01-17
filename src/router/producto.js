@@ -23,7 +23,7 @@ router.get("/create", controller.crear);
 router.get("/detail/:id", controller.detail);
 router.get("/:id/edit", controller.modificar);
 // Añadir ruta post /
-router.post("/",update.single("imagen"), controller.guardarProducto)
+router.post("/", update.single("imagen"), controller.guardarProducto)
 // Añadir ruta put /:id
 router.put("/:id", update.single("image"), controller.editar)
 // Añadir ruta delete /:id

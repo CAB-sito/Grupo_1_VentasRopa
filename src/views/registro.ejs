@@ -8,7 +8,7 @@
   <%- include('partials/header');-%>
 
     <main>
-        <form action="" method="get" class="form">
+        <form class="form" action="" method="POST"  enctype="multipart/form-data" >
             <p class="text-register">Crear cuenta</p>
             <div class="register-container">
                 <div class="nom-completo">
@@ -28,13 +28,15 @@
                 <div class="nom-completo">
                     <div class="nom">
                         <p>CIUDAD</p>
-                        <input type="text" name="nombre" class="nom-campo" required>
+                        <input type="text" name="ciudad" class="nom-campo" required>
                     </div>
                     <div class="ape">
                         <p>COD. POSTAL</p>
-                        <input type="text" name="apellido" class="nom-campo" required>
+                        <input type="text" name="codigoPostal" class="nom-campo" required>
                     </div>
                 </div> 
+                <label for="imagen">FOTO DE PERFIL</label>
+        <input class="campo-registro" type="file" name="imagen" id="imagenDelUsuario" />
                 <p>CONTRASEÑA</p>
                 <input type="password" name="password" class="campo-registro" required>
             </div>

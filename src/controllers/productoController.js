@@ -40,7 +40,7 @@ const productoController = {
     if(req.file){
       imagen = req.file.filename;
     }else{
-      imagen = "default.png";
+      imagen = "default.png ";
     }
     const newProduct = {
       id: productos[productos.length - 1].id + 1,

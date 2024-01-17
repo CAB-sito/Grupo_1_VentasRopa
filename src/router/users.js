@@ -17,6 +17,11 @@ let storage = multer.diskStorage({
 
 const update = multer({ storage: storage });
 
+
+//perfil:
 router.get("/perfil/:id", controller.usuario);
+
+//registro con post:
+router.post("/registro", update.single("imagen") , controller.registrarUsuario)
 
 module.exports = router;
