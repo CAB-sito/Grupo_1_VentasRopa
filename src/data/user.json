@@ -108,5 +108,16 @@
     "codigoPostal": "1475",
     "imagen": "descargaPerfil-1705456160800.jpg",
     "password": "$2a$10$gmpnZ.alZc76peipnzonp.EhYLCWzwj.NkmR4c9MRpZzAYvQ9odgW"
+  },
+  {
+    "id": 11,
+    "nombre": "Laura",
+    "apellido": "Gomez",
+    "email": "laugomez@hotmail.com",
+    "direccion": "Juarez 12",
+    "ciudad": "Loreto",
+    "codigoPostal": "1472",
+    "imagen": "defaultUsers.jpg",
+    "password": "$2a$10$52/OwGi7bjGg.SG1YZ5gKuwDbzHeh2ibTJO5IXZb1bZXNOVTsvFC2"
   }
 ]
