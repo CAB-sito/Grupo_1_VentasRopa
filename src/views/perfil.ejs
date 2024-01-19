@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-     <%- include('partials/head');-%>
-</head>
-<body>
+  <head>
+    <%- include('partials/head');-%>
+  </head>
+  <body>
+    <%- include('partials/header');-%>
     <main>
-        <div id="user-container">
-            <div id="user-profile" class="user-card">
-                
-                <div class="user-photo-container">
-                    <img class="user-photo" src="/images/users/<%= usuario.imagen %>" alt="Foto de perfil">
-                </div>
-                <div class="user-details">
-                    <h2>Miembro de Digital Clothes</h2>
-                    <h3><%= usuario.nombre %></h3>
-                    <h3><strong>Correo:</strong> <%= usuario.email %></h3>
-                    <h3>Miembro N°: <%= usuario.id %></h3>
-                </div>
-            </div>
+      <div id="user-container">
+        <div id="user-profile" class="user-card">
+          <div class="user-photo-container">
+            <img
+              class="user-photo"
+              src="/images/users/<%= usuario.imagen %>"
+              alt="Foto de perfil"
+            />
+          </div>
+          <div class="user-details">
+            <h2>Miembro de Digital Clothes</h2>
+            <h3><%= usuario.nombre %></h3>
+            <h3><strong>Correo:</strong> <%= usuario.email %></h3>
+            <h3>Miembro N°: <%= usuario.id %></h3>
+          </div>
         </div>
+      </div>
     </main>
     <%- include('partials/footer');-%>
-</body>
-
+  </body>
 </html>

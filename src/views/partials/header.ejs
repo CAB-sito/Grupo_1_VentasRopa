@@ -1,11 +1,20 @@
-<header>
+<header class="header">
+  <a href="/"><img src="/images/logo.jpeg" alt="" class="header-logo" /></a>
   <nav class="nav-flex">
-    <img src="images/logo.jpeg" alt="" class="logo" />
-    <a href="/" class="nav-link">home</a>
-    <a href="*" class="nav-link">Preguntas Frecuentes</a>
-    <a href="/login" class="nav-link">Login</a>
+    <a href="/faq" class="nav-link">FAQ</a>
     <a href="/products/cart" class="nav-link"
       ><i class="fa-solid fa-bag-shopping"></i
     ></a>
+    <% if (!usuario) { %>
+    <a href="/users/login" class="nav-link">Login</a>
+    <a href="/registro" class="nav-link">Register</a>
+    <% } else { %>
+    <a href="/users/perfil" class="nav-perfil"
+      ><img
+        src="/images/users/<%= usuario.imagen %>"
+        alt=""
+        class="nav-perfil-image"
+    /></a>
+    <% } %>
   </nav>
 </header>

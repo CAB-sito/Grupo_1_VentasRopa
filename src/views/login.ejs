@@ -8,19 +8,31 @@
   <%- include('partials/header');-%>
 
     <main>
-        <form class="form-login" action="" method="get" class="form">
+      
+
+        <form class="form-login" action="/users/login" method="POST" class="form">
+          <% if(typeof errors !== 'undefined') { %>
+            <ul style="color: red;">
+              <% for(let i=0; i<errors.length; i++) { %>
+                <li style="list-style: none;">
+                  <%=errors[i].msg%>
+                </li>
+                <% } %>
+            </ul>
+            <% } %>
             <p class="text-login">Iniciar sesion</p>
             <div class="login-container">
-                <p>CORREO ELECTRONICO</p>
+                <label>CORREO ELECTRONICO: </label> <br>
                 <input type="email" name="email" class="campo-login" required>
-                <p>CONTRASEÑA</p>
+                <label>CONTRASEÑA: </label> <br>
                 <input type="password" name="password" class="campo-login" required>  
             </div>
            
             <a href="/registro" class="crear-cuenta">Crear cuenta</a>
             <br>
-            <button class="enviar_login" type="submit">ENVIAR</button>
-            <a href="#" class="recupera-contra">¿Olvido su contraseña?</a>
+            <label for="recordame">Recordar sesión: </label>
+            <input type="checkbox" name="recordame" id="recordame"><br>
+            <button class="enviar_login" type="submit">Iniciar sesion</button>
             <br>
             
         </form>

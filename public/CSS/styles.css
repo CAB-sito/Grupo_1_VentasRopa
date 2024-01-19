@@ -16,15 +16,37 @@ a {
 /*fin body*/
 /*header*/
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  padding: 10px 20px;
+  align-items: center;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-logo {
+  box-sizing: border-box;
+  display: inline;
+  height: 60px;
+}
+
+.nav-perfil-image {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
 .nav-flex {
   display: flex;
-  background-color: black;
   text-decoration: none;
   color: white;
   font-size: 30px;
-  justify-content: space-around;
-  height: 60px;
-  width: 100%;
+  align-items: center;
+  gap: 1rem;
 }
 .nav-link {
   text-decoration: none;
@@ -453,7 +475,7 @@ i.fa-solid.fa-circle {
   padding: 2px;
 }
 
-.enviar_login{
+.enviar_login {
   font-size: 30px;
   background-color: black;
   color: white;
@@ -464,15 +486,15 @@ i.fa-solid.fa-circle {
   margin-top: 20px;
 }
 
-.enviar_login{
-  transition-property:background-color, font-size, border-radius;
+.enviar_login {
+  transition-property: background-color, font-size, border-radius;
   transition-duration: 0.5s;
 }
 
 .enviar_login:hover {
-font-size: 32px;
-border-radius: 20px;
-background-color: rgb(63, 61, 61);
+  font-size: 32px;
+  border-radius: 20px;
+  background-color: rgb(63, 61, 61);
 }
 
 .recupera-contra {
@@ -482,8 +504,8 @@ background-color: rgb(63, 61, 61);
   transition-property: text-decoration;
   transition-duration: 0.1s;
 }
-.recupera-contra:hover{
-  text-decoration:underline;
+.recupera-contra:hover {
+  text-decoration: underline;
 }
 
 .crear-cuenta {
@@ -491,8 +513,8 @@ background-color: rgb(63, 61, 61);
   color: black;
   margin-left: 15%;
 }
-.crear-cuenta:hover{
-  text-decoration:underline;
+.crear-cuenta:hover {
+  text-decoration: underline;
 }
 
 /*
@@ -541,13 +563,13 @@ background-color: rgb(63, 61, 61);
 }
 
 .button-register {
-  transition-property:background-color, font-size, border-radius;
+  transition-property: background-color, font-size, border-radius;
   transition-duration: 0.5s;
 }
 .button-register:hover {
-font-size: 31px;
-border-radius: 20px;
-background-color: rgb(23, 23, 23);
+  font-size: 31px;
+  border-radius: 20px;
+  background-color: rgb(23, 23, 23);
 }
 
 .recupera-contra {
@@ -563,8 +585,7 @@ background-color: rgb(23, 23, 23);
 }
 .nom-completo {
   display: flex;
- justify-content: space-around;
- 
+  justify-content: space-around;
 }
 .nom-campo {
   width: 100%;
@@ -658,7 +679,7 @@ background-color: rgb(23, 23, 23);
   padding-bottom: 20px;
 }
 
-.titulo{
+.titulo {
   width: 100%;
   margin-bottom: 10px;
 }
@@ -669,16 +690,16 @@ background-color: rgb(23, 23, 23);
   align-items: center;
   gap: 10px;
   border: 1px solid black;
- background-color: white;
- width: 70%;
- margin: 2% 15%;
- padding-top: 20px;
- border-radius: 20px;
+  background-color: white;
+  width: 70%;
+  margin: 2% 15%;
+  padding-top: 20px;
+  border-radius: 20px;
 }
 
-.espacio-completar{
+.espacio-completar {
   width: 60%;
- /* background-color: bisque;*/
+  /* background-color: bisque;*/
   font-size: 23px;
   margin-bottom: 15px;
   border-radius: 5px;
@@ -690,7 +711,7 @@ background-color: rgb(23, 23, 23);
   text-align: center;
 }
 .boton-añadir,
-.eliminar{
+.eliminar {
   margin-bottom: 3%;
   font-size: 30px;
   background-color: black;
@@ -700,25 +721,24 @@ background-color: rgb(23, 23, 23);
 }
 
 .boton-añadir,
-.eliminar{
-  transition-property:background-color, font-size, border-radius;
+.eliminar {
+  transition-property: background-color, font-size, border-radius;
   transition-duration: 0.5s;
 }
 
-.boton-añadir:hover{
+.boton-añadir:hover {
   font-size: 31px;
-border-radius: 20px;
-background-color: rgb(6, 6, 6);
+  border-radius: 20px;
+  background-color: rgb(6, 6, 6);
 }
 
-.eliminar:hover{
+.eliminar:hover {
   font-size: 31px;
-border-radius: 20px;
-background-color: rgb(6, 6, 6);
+  border-radius: 20px;
+  background-color: rgb(6, 6, 6);
 }
 
-
-.botonEliminar{
+.botonEliminar {
   text-align: center;
 }
 
@@ -761,7 +781,9 @@ background-color: rgb(6, 6, 6);
   padding: 20px;
 }
 
-h2, h3, p {
+h2,
+h3,
+p {
   margin: 0 0 10px 0;
 }
 /*Fin de la vista de perfil*/

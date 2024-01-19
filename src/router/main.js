@@ -18,11 +18,11 @@ const update = multer({ storage: storage });
 const routes = {
   home: "/",
   register: "/registro",
-  login: "/login",
+  /*login: "/login",*/
 };
 
 router.get(routes.home, mainController.home);
-router.get(routes.login, mainController.login);
+/*router.get(routes.login, mainController.login);*/
 router.get(routes.register, mainController.register);
 
 module.exports = router;
