@@ -13,16 +13,6 @@ const usersController = {
         const usuarios = userList();
         res.render("", { listaProductos: productos });
       },*/
-  usuario: (req, res) => {
-    const usuario = req.session.usuario;
-
-    if (!usuario) {
-      return res.redirect("/registro");
-    }
-
-    res.render("perfil", { usuario: usuario });
-  },
-
   registrarUsuario: (req, res) => {
     const usuarios = userList();
     let imagen;
@@ -47,6 +37,14 @@ const usersController = {
 
     fs.writeFileSync(userFilePath, JSON.stringify(usuarios));
   },
+
+  usuario: (req, res) => {
+    const usuario = req.session.usuario;
+
+    res.render("perfil", { usuario: usuario });
+  },
+
+
 
   login: function (req, res) {
     return res.render("login", { usuario: req.session.usuario });
@@ -100,6 +98,11 @@ const usersController = {
       });
     }
   },
+  cerrarSes: (req, res) => {
+    res.clearCookie("Recordame");
+    req.session.usuario = undefined;
+    res.redirect("/");
+  }
 };
 
 module.exports = usersController;

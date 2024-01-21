@@ -3,6 +3,8 @@ const router = express.Router();
 const mainController = require("../controllers/mainController");
 const multer = require("multer");
 const path = require("path");
+const guestMiddleware = require("../middlewares/guestMiddleware");
+
 
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -23,6 +25,6 @@ const routes = {
 
 router.get(routes.home, mainController.home);
 /*router.get(routes.login, mainController.login);*/
-router.get(routes.register, mainController.register);
+router.get(routes.register,guestMiddleware, mainController.register);
 
 module.exports = router;

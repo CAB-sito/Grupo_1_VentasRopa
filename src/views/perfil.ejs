@@ -20,6 +20,9 @@
             <h3><%= usuario.nombre %></h3>
             <h3><strong>Correo:</strong> <%= usuario.email %></h3>
             <h3>Miembro N°: <%= usuario.id %></h3>
+            <form action="/users/perfil" method="POST" class="user-CerrarSesion">
+              <button type="submit">Cerrar Sesion</button>
+            </form>
           </div>
         </div>
       </div>
