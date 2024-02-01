@@ -30,7 +30,7 @@
         "email": "cmowbray2@eepurl.com",
         "direccion": "15th Floor",
         "ciudad": "Saint-Quentin-en-Yvelines",
-        "codigoPostal": "78181 CEDEX",
+        "codigoPostal": "78181",
         "imagen": "3.jpg",
         "password": "tK4#b<RAf6x",
         "categoria": "cliente VIP"
@@ -42,7 +42,7 @@
         "email": "dnutbeem3@yale.edu",
         "direccion": "Apt 15",
         "ciudad": "Yoichi",
-        "codigoPostal": "420-0949",
+        "codigoPostal": "4200949",
         "imagen": "4.jpg",
         "password": "nM0.g$00wqG$0",
         "categoria": "empleado"
@@ -54,7 +54,7 @@
         "email": "hduckett4@rambler.ru",
         "direccion": "Suite 39",
         "ciudad": "Belén Gualcho",
-        "codigoPostal": "457-1112",
+        "codigoPostal": "4571112",
         "imagen": "5.jpg",
         "password": "uF9\"$\"<G~H",
         "categoria": "cliente"
@@ -66,7 +66,7 @@
         "email": "mbottinelli5@deviantart.com",
         "direccion": "Apt 1417",
         "ciudad": "Patrol",
-        "codigoPostal": "157-3548",
+        "codigoPostal": "1573548",
         "imagen": "6.jpg",
         "password": "kJ9#A~|L&wc=",
         "categoria": "administrador"
@@ -78,7 +78,7 @@
         "email": "tcastanho6@sourceforge.net",
         "direccion": "PO Box 96253",
         "ciudad": "Jixiang",
-        "codigoPostal": "201-7417",
+        "codigoPostal": "2017417",
         "imagen": "7.jpg",
         "password": "jW0!8!Gg`7",
         "categoria": "empleado"
@@ -90,7 +90,7 @@
         "email": "cwitter7@nytimes.com",
         "direccion": "Suite 27",
         "ciudad": "Khafizan",
-        "codigoPostal": "457-4784",
+        "codigoPostal": "4574784",
         "imagen": "8.jpg",
         "password": "fH5*K2o!",
         "categoria": "gerente"
@@ -102,7 +102,7 @@
         "email": "lmcnabb8@a8.net",
         "direccion": "Room 1348",
         "ciudad": "Dąbrowice",
-        "codigoPostal": "99-352",
+        "codigoPostal": "99352",
         "imagen": "9.jpg",
         "password": "yW3./4$d$<`EB",
         "categoria": "proveedor"
