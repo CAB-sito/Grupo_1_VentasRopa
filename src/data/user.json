@@ -8,7 +8,8 @@
         "ciudad": "Loma Bonita",
         "codigoPostal": "47450",
         "imagen": ".jpg",
-        "password": "mR9`MF.FZ"
+        "password": "mR9`MF.FZ",
+        "categoria": "cliente"
     },
     {
         "id": 2,
@@ -19,7 +20,8 @@
         "ciudad": "Kawengan",
         "codigoPostal": "12450",
         "imagen": "2.jpg",
-        "cotraseña": "jT4`HO<R"
+        "cotraseña": "jT4`HO<R",
+        "categoria": "proveedor"
     },
     {
         "id": 3,
@@ -30,7 +32,8 @@
         "ciudad": "Saint-Quentin-en-Yvelines",
         "codigoPostal": "78181 CEDEX",
         "imagen": "3.jpg",
-        "password": "tK4#b<RAf6x"
+        "password": "tK4#b<RAf6x",
+        "categoria": "cliente VIP"
     },
     {
         "id": 4,
@@ -41,7 +44,8 @@
         "ciudad": "Yoichi",
         "codigoPostal": "420-0949",
         "imagen": "4.jpg",
-        "password": "nM0.g$00wqG$0"
+        "password": "nM0.g$00wqG$0",
+        "categoria": "empleado"
     },
     {
         "id": 5,
@@ -52,7 +56,8 @@
         "ciudad": "Belén Gualcho",
         "codigoPostal": "457-1112",
         "imagen": "5.jpg",
-        "password": "uF9\"$\"<G~H"
+        "password": "uF9\"$\"<G~H",
+        "categoria": "cliente"
     },
     {
         "id": 6,
@@ -63,7 +68,8 @@
         "ciudad": "Patrol",
         "codigoPostal": "157-3548",
         "imagen": "6.jpg",
-        "password": "kJ9#A~|L&wc="
+        "password": "kJ9#A~|L&wc=",
+        "categoria": "administrador"
     },
     {
         "id": 7,
@@ -74,7 +80,8 @@
         "ciudad": "Jixiang",
         "codigoPostal": "201-7417",
         "imagen": "7.jpg",
-        "password": "jW0!8!Gg`7"
+        "password": "jW0!8!Gg`7",
+        "categoria": "empleado"
     },
     {
         "id": 8,
@@ -85,7 +92,8 @@
         "ciudad": "Khafizan",
         "codigoPostal": "457-4784",
         "imagen": "8.jpg",
-        "password": "fH5*K2o!"
+        "password": "fH5*K2o!",
+        "categoria": "gerente"
     },
     {
         "id": 9,
@@ -96,7 +104,8 @@
         "ciudad": "Dąbrowice",
         "codigoPostal": "99-352",
         "imagen": "9.jpg",
-        "password": "yW3./4$d$<`EB"
+        "password": "yW3./4$d$<`EB",
+        "categoria": "proveedor"
     },
     {
         "id": 10,
@@ -107,7 +116,8 @@
         "ciudad": "Campo Gallo",
         "codigoPostal": "1475",
         "imagen": "descargaPerfil-1705456160800.jpg",
-        "password": "$2a$10$gmpnZ.alZc76peipnzonp.EhYLCWzwj.NkmR4c9MRpZzAYvQ9odgW"
+        "password": "$2a$10$gmpnZ.alZc76peipnzonp.EhYLCWzwj.NkmR4c9MRpZzAYvQ9odgW",
+        "categoria": "cliente"
     },
     {
         "id": 11,
@@ -118,7 +128,8 @@
         "ciudad": "Loreto",
         "codigoPostal": "1472",
         "imagen": "defaultUsers.jpg",
-        "password": "$2a$10$52/OwGi7bjGg.SG1YZ5gKuwDbzHeh2ibTJO5IXZb1bZXNOVTsvFC2"
+        "password": "$2a$10$52/OwGi7bjGg.SG1YZ5gKuwDbzHeh2ibTJO5IXZb1bZXNOVTsvFC2",
+        "categoria": "cliente"
     },
     {
         "id": 12,
@@ -129,7 +140,8 @@
         "ciudad": "Capital",
         "codigoPostal": "4200",
         "imagen": "logoDC-1705583454697.jpg",
-        "password": "$2a$10$gPO6NSuHE9JHEjMIeZqrHe80q6hL9wnhfLO1Ac5RcNtuD3WKg5fcq"
+        "password": "$2a$10$gPO6NSuHE9JHEjMIeZqrHe80q6hL9wnhfLO1Ac5RcNtuD3WKg5fcq",
+        "categoria": "cliente VIP"
     },
     {
         "id": 13,
@@ -140,7 +152,8 @@
         "ciudad": "Capital",
         "codigoPostal": "4200",
         "imagen": "logoDC-1705687934009.jpg",
-        "password": "$2a$10$XUZbR3s.Hou9estt1fcGuOJfzOCa9wwJrawIy0h4dSEVsoNuwkL0q"
+        "password": "$2a$10$XUZbR3s.Hou9estt1fcGuOJfzOCa9wwJrawIy0h4dSEVsoNuwkL0q",
+        "categoria": "empleado"
     },
     {
         "id": 14,
@@ -151,7 +164,8 @@
         "ciudad": "La banda",
         "codigoPostal": "3200",
         "imagen": "pexels-julia-kuzenkov-1176618-1705793460713.jpg",
-        "password": "$2a$10$ga07.lIDnPQo9BBAEDChHeEVejQ0tFRuSPm6oOpT7G54cwkY7Bj.6"
+        "password": "$2a$10$ga07.lIDnPQo9BBAEDChHeEVejQ0tFRuSPm6oOpT7G54cwkY7Bj.6",
+        "categoria": "administrador"
     },
     {
         "id": 15,
@@ -162,6 +176,7 @@
         "ciudad": "La banda",
         "codigoPostal": "3200",
         "imagen": "defaultUsers.jpg",
-        "password": "$2a$10$ky1a3X8oxgV/eddsAh5cYe91CEHO0qQuMPq7YZO90LEJMFcETpd7G"
+        "password": "$2a$10$ky1a3X8oxgV/eddsAh5cYe91CEHO0qQuMPq7YZO90LEJMFcETpd7G",
+        "categoria": "gerente"
     }
 ]
