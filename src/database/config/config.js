@@ -2,22 +2,25 @@ module.exports={
     "development": {
       "username": "root",
       "password": null,
-      "database": "database_development",
+      "database": "digital_clothes",
       "host": "127.0.0.1",
-      "dialect": "mysql"
+      "dialect": "mysql",
+      "port" : 3307
     },
     "test": {
       "username": "root",
       "password": null,
-      "database": "database_test",
+      "database": "digital_clothes",
       "host": "127.0.0.1",
-      "dialect": "mysql"
+      "dialect": "mysql",
+      "port" : 3307
     },
     "production": {
       "username": "root",
       "password": null,
-      "database": "database_production",
+      "database": "digital_clothes",
       "host": "127.0.0.1",
-      "dialect": "mysql"
+      "dialect": "mysql",
+      "port" : 3307
     }
 };
