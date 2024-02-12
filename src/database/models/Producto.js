@@ -7,6 +7,10 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
       autoIncrement: true,
     },
+    nombre: {
+      type: dataTypes.STRING(45),
+      allowNull: true,
+    },
     marca: {
       type: dataTypes.STRING(30),
       allowNull: true,
@@ -15,6 +19,9 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(15),
     },
     precio: {
+      type: dataTypes.DECIMAL(12, 2),
+    },
+    descuento: {
       type: dataTypes.DECIMAL(12, 2),
     },
     talle: {

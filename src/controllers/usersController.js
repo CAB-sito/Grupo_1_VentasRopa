@@ -2,6 +2,9 @@ const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const db = require("../database/models");
+
+
 
 const userFilePath = path.resolve(__dirname, "../data/user.json");
 function userList() {
@@ -14,28 +17,24 @@ const usersController = {
         res.render("", { listaProductos: productos });
       },*/
   registrarUsuario: (req, res) => {
-    const usuarios = userList();
     let imagen;
     if (req.file) {
       imagen = req.file.filename;
     } else {
       imagen = "defaultUsers.jpg";
     }
-    const newUsuario = {
-      id: usuarios[usuarios.length - 1].id + 1,
+    db.Usuario.create({
       nombre: req.body.nombre,
       apellido: req.body.apellido,
       email: req.body.email,
+      codigoPostal: req.body.codigoPostal,
       direccion: req.body.direccion,
       ciudad: req.body.ciudad,
-      codigoPostal: req.body.codigoPostal,
-      imagen: imagen,
-      password: bcrypt.hashSync(req.body.password, 10),
-    };
-    usuarios.push(newUsuario);
+      contrasenia: bcrypt.hashSync(req.body.password, 10),
+      imagen: imagen
+    })
     res.redirect("/");
 
-    fs.writeFileSync(userFilePath, JSON.stringify(usuarios));
   },
 
   usuario: (req, res) => {
