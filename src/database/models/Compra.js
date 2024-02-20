@@ -3,24 +3,31 @@ const CompraProducto = require("./CompraProducto");
 module.exports = (sequelize, dataTypes) => {
   let alias = "Compra";
   let cols = {
-    numero_orden: {
-      type: dataTypes.INTERGER(11),
-      primaryKey: true,
+    id : {
+      type:dataTypes.INTERGER(11),
       allowNull: false,
-      autoIncrement: true,
-      unique: true,
+      autoIncrement: true
+    },
+
+    cant_producto: {
+      type: dataTypes.INTERGER(11),
+      allowNull: false
     },
 
     id_usuario: {
       type: dataTypes.INTERGER(11),
       allowNull: false,
     },
+
+    id_producto: {
+      type: dataTypes.INTERGER(11),
+      allowNull: false,
+    }
   };
 
   let config = {
     tableName: "compras",
     timestamps: false,
-
     /* timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
@@ -29,28 +36,22 @@ module.exports = (sequelize, dataTypes) => {
 
   let Compra = sequelize.define(alias, cols, config);
 
-  //id de usuario, asociación:
+  //ASOCIACIONES: usuario
   Compra.associate = function (models) {
     Compra.belongsTo(models.Usuario, {
       as: "usuario",
       foreignKey: "id_usuario",
     });
 
-    /*Compra.hasMany(models.CompraProducto, {
-            as: "compra",
-            foreignKey: "id_compra",
-          });*/
-
-    CompraProducto.associate = function (models) {
-      CompraProducto.belongsToMany(models.Producto, {
+    //ASOCIACIONES: productos
+    Compra.associate = function (models) {
+      Compra.belongsTo(models.Producto, {
         as: "producto",
-        through: "compra_productos",
-        foreignKey: "id_compra",
-        otherKey: "id_producto",
-        timestamps: false,
+        foreignKey: "id_producto",
       });
-    };
+
+
   };
 
   return Compra;
-};
+}}

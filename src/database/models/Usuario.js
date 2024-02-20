@@ -2,46 +2,45 @@ module.exports = (sequelize, dataTypes) => {
   let alias = "Usuario";
   let cols = {
     id: {
-      type: dataTypes.INTERGER,
+      type: dataTypes.INTERGER(11),
       primaryKey: true,
       allowNull: false,
-      autoIncrement: true,
-      unique: true,
+      autoIncrement: true
     },
     nombre: {
-      type: dataTypes.STRING(50),
+      type: dataTypes.STRING(45),
       allowNull: false,
     },
     apellido: {
-      type: dataTypes.STRING(50),
+      type: dataTypes.STRING(45),
       allowNull: false,
     },
     email: {
-      type: dataTypes.STRING(50),
+      type: dataTypes.STRING(45),
       allowNull: false,
-      unique: true,
+      unique: true
     },
     codigo_postal: {
-      type: dataTypes.STRING(5),
+      type: dataTypes.STRING(8),
       allowNull: false,
     },
     direccion: {
-      type: dataTypes.STRING(50),
+      type: dataTypes.STRING(60),
       allowNull: false,
     },
     ciudad: {
-      type: dataTypes.STRING(20),
+      type: dataTypes.STRING(45),
       allowNull: false,
     },
     contrasenia: {
-      type: dataTypes.STRING(20),
+      type: dataTypes.STRING(100),
       allowNull: false,
     },
     imagen: {
-      type: dataTypes.STRING(20),
+      type: dataTypes.STRING(100),
       allowNull: false,
     },
-    id_categoria_usuario: {
+    id_categoria: {
       type: dataTypes.INTERGER(11),
       allowNull: false,
     },
@@ -59,13 +58,14 @@ module.exports = (sequelize, dataTypes) => {
 
   const Usuario = sequelize.define(alias, cols, config);
 
-  //asociacion 1 a 1
+  //ASOCIACIONES: Categoria de usuario:
   Usuario.associate = function (models) {
     Usuario.belongsTo(models.CategoriaUsuario, {
       as: "categoria_usuario",
-      foreignKey: "id_categoria_usuario",
+      foreignKey: "id_categoria",
     });
 
+    //ASOCIACIONES:carrito de compras:
     Usuario.hasMany(models.Compra, {
         as: "compra",
         foreignKey: "id_usuario",

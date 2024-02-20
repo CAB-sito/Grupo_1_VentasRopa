@@ -5,9 +5,7 @@ module.exports = (sequelize, dataTypes) => {
     id: {
       types: dataTypes.INTEGER,
       allowNull: false,
-      autoIncremet: true,
-      primaryKey: true,
-      unique: true,
+      primaryKey: true
     },
     nombre: {
       types: dataTypes.STRING(30),
@@ -25,11 +23,11 @@ module.exports = (sequelize, dataTypes) => {
   };
   const CategoriaProducto = sequelize.define(alias, cols, config);
 
-  //asociaciones
+  //ASOCIACIONES: producto
   CategoriaProducto.associate = function (models) {
     CategoriaProducto.hasMany(models.Producto, {
       as: "producto",
-      foreignKey: "id_categoria_producto",
+      foreignKey: "id_categoria",
     });
   };
 

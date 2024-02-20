@@ -5,9 +5,7 @@ module.exports = (sequelize, dataTypes) => {
     id: {
       types: dataTypes.INTERGER(11),
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-      unique: true,
+      primaryKey: true
     },
 
     nombre: {
@@ -24,11 +22,11 @@ module.exports = (sequelize, dataTypes) => {
         deletedAt: false */
   };
 
-  // asociación, que sera uno a uno con usuario, creo.
+  //ASOCIACIONES: usuario
   CategoriaUsuario.associate = function (models) {
     CategoriaUsuario.hasMany(models.Usuario, {
       as: "usuario",
-      foreignKey: "id_categoria_usuario",
+      foreignKey: "id_categoria"
     });
   };
 

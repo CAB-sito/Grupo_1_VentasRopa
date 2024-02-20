@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
   let alias = "Producto";
   let cols = {
     id: {
-      type: dataTypes.INTERGER,
+      type: dataTypes.INTERGER(11),
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
@@ -17,22 +17,27 @@ module.exports = (sequelize, dataTypes) => {
     },
     color: {
       type: dataTypes.STRING(15),
+      allowNull: true,
     },
     precio: {
       type: dataTypes.DECIMAL(12, 2),
+      allowNull: true,
     },
     descuento: {
       type: dataTypes.DECIMAL(12, 2),
     },
     talle: {
       type: dataTypes.STRING(5),
+      allowNull: true,
     },
     imagen: {
       type: dataTypes.STRING(100),
+      allowNull: true,
     },
 
-    id_categoria_producto: {
+    id_categoria: {
       type: dataTypes.INTERGER(11),
+      allowNull: true,
     },
   };
   let config = {
@@ -47,26 +52,21 @@ module.exports = (sequelize, dataTypes) => {
 
   const Producto = sequelize.define(alias, cols, config);
 
-  //falta la asociacion com id categoria productos (uno a uno)
+  //ASOCIACIONES: categoria o tipo de productos:
   Producto.associate = function (models) {
     Producto.belongsTo(models.CategoriaProducto, {
       as: "categoria_producto",
-      foreignKey: "id_categoria_producto",
+      foreignKey: "id_categoria",
     });
 
-    /* Producto.hasMany(models.CompraProducto, {
-      as: "producto",
-      foreignKey: "id_producto",
-    });*/
-
+ 
+    //ASOCIACIONES:carrito de compra:
     Producto.associate = function (models) {
-      Producto.belongsToMany(models.Compra, {
+      Producto.hasMany(models.Compra, {
         as: "compra",
-        through: "compra_productos",
         foreignKey: "id_producto",
-        otherKey: "id_compra",
-        timestamps: false,
       });
+
     };
   };
 
