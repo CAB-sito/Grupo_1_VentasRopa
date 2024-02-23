@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
   let alias = "Usuario";
   let cols = {
     id: {
-      type: dataTypes.INTERGER(11),
+      type: dataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true
@@ -41,7 +41,7 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     id_categoria: {
-      type: dataTypes.INTERGER(11),
+      type: dataTypes.INTEGER,
       allowNull: false,
     },
   };
@@ -56,21 +56,21 @@ module.exports = (sequelize, dataTypes) => {
         deletedAt: false */
   };
 
-  const Usuario = sequelize.define(alias, cols, config);
+  const usuario = sequelize.define(alias, cols, config);
 
   //ASOCIACIONES: Categoria de usuario:
-  Usuario.associate = function (models) {
-    Usuario.belongsTo(models.CategoriaUsuario, {
-      as: "categoria_usuario",
+  usuario.associate = function (models) {
+    usuario.belongsTo(models.CategoriaUsuario, {
+      as: "categoriaUsuario",
       foreignKey: "id_categoria",
     });
 
     //ASOCIACIONES:carrito de compras:
-    Usuario.hasMany(models.Compra, {
-        as: "compra",
+    usuario.hasMany(models.Compra,{
+        as: "Compra",
         foreignKey: "id_usuario",
       });
   };
 
-  return Usuario;
+  return usuario;
 };

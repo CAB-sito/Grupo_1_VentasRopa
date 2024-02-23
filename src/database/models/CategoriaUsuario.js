@@ -1,18 +1,19 @@
 module.exports = (sequelize, dataTypes) => {
-  let alias = "CatagoriaUsuario";
+  let alias = "CategoriaUsuario";
 
   let cols = {
-    id: {
-      types: dataTypes.INTERGER(11),
-      allowNull: false,
-      primaryKey: true
+    id:{
+      type: dataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false
     },
+    nombre:{
+      type: dataTypes.STRING(30),
+      allowNull: false
+    }
+  }
 
-    nombre: {
-      types: dataTypes.STRING(30),
-      allowNull: false,
-    },
-  };
+  
   let config = {
     tableName: "categoria_usuario",
     timestamps: false,
@@ -21,16 +22,16 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: 'updated_at',
         deletedAt: false */
   };
-
+  const categoriaUsuario = sequelize.define(alias, cols, config);
   //ASOCIACIONES: usuario
-  CategoriaUsuario.associate = function (models) {
-    CategoriaUsuario.hasMany(models.Usuario, {
-      as: "usuario",
+  categoriaUsuario.associate = function (models) {
+    categoriaUsuario.hasMany(models.Usuario, {
+      as: "Usuario",
       foreignKey: "id_categoria"
     });
   };
 
-  const CategoriaUsuario = sequelize.define(alias, cols, config);
+ 
 
-  return CategoriaUsuario;
+  return categoriaUsuario;
 };
