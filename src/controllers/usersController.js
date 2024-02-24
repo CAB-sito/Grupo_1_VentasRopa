@@ -31,7 +31,8 @@ const usersController = {
       direccion: req.body.direccion,
       ciudad: req.body.ciudad,
       contrasenia: bcrypt.hashSync(req.body.password, 10),
-      imagen: imagen
+      imagen: imagen,
+      id_categoria:req.body.login
     })
     res.redirect("/");
 

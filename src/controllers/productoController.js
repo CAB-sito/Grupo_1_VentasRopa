@@ -52,11 +52,12 @@ const productoController = {
     db.Producto.create({
       nombre: req.body.name,
       marca: req.body.marca,
-      imagen: imagen,
-      id_categoria_producto: req.body.category,
       color: req.body.color,
       precio: req.body.price,
       descuento: req.body.discount,
+      talle: req.body.talle,
+      imagen: imagen,
+      id_categoria: req.body.cat_pro
     });
    
     res.redirect("/products");
