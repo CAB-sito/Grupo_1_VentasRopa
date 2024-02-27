@@ -9,16 +9,12 @@ function productList() {
 
 const controller = {
   home: (req, res) => {
-    let oferta = db.Producto.findAll({where:{categoria: 2}})
-    .then((ofertas)=>{
-      return ofertas;
-    })
+    productos = db.Producto.findAll()
+  
+    const productosDestacados = productos.filter((product) => product.categoria == 1);
+    const ofertas = productos.filter((product) => product.category == 2);
 
-    let normal = db.Producto.findAll({where:{categoria: 1}})
-    .then((productos)=>{
-      return productos;
-    })
-    res.render("index", {productosDestacados: normal,ofertas : oferta, usuario: req.session.usuario})
+    res.render("index", {productosDestacados,ofertas, usuario: req.session.usuario})
 
     /*productos = productList();
     const productosDestacados = productos.filter(
