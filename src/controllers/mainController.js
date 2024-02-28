@@ -9,10 +9,11 @@ function productList() {
 
 const controller = {
   home: (req, res) => {
-    productos = db.Producto.findAll()
+    productos = db.Producto.findAll({include:["CategoriaProducto"]});
+    
   
-    const productosDestacados = productos.filter((product) => product.categoria == 1);
-    const ofertas = productos.filter((product) => product.category == 2);
+    const productosDestacados = productos.filter((product) => product.compra.id == 1);
+    const ofertas = productos.filter((product) => product.compra.id == 2);
 
     res.render("index", {productosDestacados,ofertas, usuario: req.session.usuario})
 

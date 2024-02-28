@@ -5,11 +5,11 @@ const { validationResult } = require("express-validator");
 const db = require("../database/models");
 
 
-
+/*
 const userFilePath = path.resolve(__dirname, "../data/user.json");
 function userList() {
   return JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
-}
+}*/
 
 const usersController = {
   /*listarUsuario: (req, res) => {
