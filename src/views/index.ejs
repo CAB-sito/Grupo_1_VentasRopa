@@ -22,7 +22,7 @@
         <% productosDestacados.forEach((product) => { %>
         <article class="product">
           <a href="/products/detail/<%=product.id %>"> 
-            <img src="/images/products/<%=product.image%> " alt="">  </a>
+            <img src="/images/products/<%=product.imagen%> " alt="">  </a>
           <div class="product-number" > 
             <p class="price">$<%=product.precio%></p>
             <p class="discount"><%=product.decuento%>% off</p>
@@ -36,9 +36,10 @@
       <h1 class="ofer">Ofertas</h1>
       <section class="container">
         <% ofertas.forEach((product) => { %>
+          <% console.log(product) %>
         <article class="product">
           <a href="/products/detail/<%=product.id %>"> 
-            <img src="/images/products/<%=product.image%> " alt="">  </a>
+            <img src="/images/products/<%=product.imagen%> " alt="">  </a>
           <div class="product-number" > 
             <p class="price">$<%=product.precio%></p>
             <p class="discount"><%=product.descuento%>% off</p>

@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         autoIncrement: true,
       },
       nombre: {
-        type: dataTypes.STRING(45),
+        type: dataTypes.STRING(30),
         allowNull: true,
       },
       marca: {
@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.DECIMAL(12, 2),
       },
       talle: {
-        type: dataTypes.STRING(5),
+        type: dataTypes.STRING(8),
         allowNull: true,
       },
       imagen: {
@@ -45,24 +45,21 @@ module.exports = (sequelize, dataTypes) => {
       tableName: "productos",
       timestamps: false,
   
-      /* timestamps: true,  
-          createdAt: 'created_at',   
-          updatedAt: 'updated_at',
-          deletedAt: false*/
+      
     };
   
-    const producto = sequelize.define(alias, cols, config);
+    const Producto = sequelize.define(alias, cols, config);
   
     //ASOCIACIONES: categoria o tipo de productos:
-    producto.associate = function (models) {
-      producto.belongsTo(models.CategoriaProducto, {
+    Producto.associate = function (models) {
+      Producto.belongsTo(models.CategoriaProducto, {
         as: "CategoriaProducto",
         foreignKey: "id_categoria",
       });
   
    
       //ASOCIACIONES:carrito de compra:
-        producto.hasMany(models.Compra, {
+        Producto.hasMany(models.Compra, {
           as: "Compra",
           foreignKey: "id_producto",
         });
@@ -70,5 +67,5 @@ module.exports = (sequelize, dataTypes) => {
       
     };
   
-    return producto;
+    return Producto;
   };
