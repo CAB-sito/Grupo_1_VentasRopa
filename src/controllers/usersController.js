@@ -4,7 +4,6 @@ const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
 
-
 /*
 const userFilePath = path.resolve(__dirname, "../data/user.json");
 function userList() {
@@ -17,25 +16,44 @@ const usersController = {
         res.render("", { listaProductos: productos });
       },*/
   registrarUsuario: (req, res) => {
-    let imagen;
-    if (req.file) {
-      imagen = req.file.filename;
-    } else {
-      imagen = "defaultUsers.jpg";
-    }
-    db.Usuario.create({
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
-      email: req.body.email,
-      direccion: req.body.direccion,
-      codigoPostal: req.body.codigoPostal,
-      ciudad: req.body.ciudad,
-      contrasenia: bcrypt.hashSync(req.body.password, 10),
-      imagen: imagen,
-      id_categoria:req.body.login
-    })
-    res.redirect("/");
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      let usersJSON = fs.readFileSync(
+        path.resolve(__dirname, "../data/user.json"),
+        {
+          encoding: "utf-8",
+        }
+      );
+      let users;
+      if (usersJSON == "") {
+        users = [];
+      } else {
+        users = JSON.parse(usersJSON);
+      }
 
+      let imagen;
+      if (req.file) {
+        imagen = req.file.filename;
+      } else {
+        imagen = "defaultUsers.jpg";
+      }
+      db.Usuario.create({
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        email: req.body.email,
+        direccion: req.body.direccion,
+        codigoPostal: req.body.codigoPostal,
+        ciudad: req.body.ciudad,
+        contrasenia: bcrypt.hashSync(req.body.password, 10),
+        imagen: imagen,
+        id_categoria: req.body.login,
+      });
+      res.redirect("/");
+    } else {
+      return res.render("registro", {
+        errors: errors.errors,
+      });
+    }
   },
 
   usuario: (req, res) => {
@@ -43,8 +61,6 @@ const usersController = {
 
     res.render("perfil", { usuario: usuario });
   },
-
-
 
   login: function (req, res) {
     return res.render("login", { usuario: req.session.usuario });
@@ -102,7 +118,7 @@ const usersController = {
     res.clearCookie("Recordame");
     req.session.usuario = undefined;
     res.redirect("/");
-  }
+  },
 };
 
 module.exports = usersController;
