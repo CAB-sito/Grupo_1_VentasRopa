@@ -12,9 +12,13 @@
 
         <% if(locals.errors){ 
           errors.forEach(error => { %>
-            <p class="erroresEnCreate"> <%= error.msg %></p>
+            <ul class="erroresEnCreate"> <li><%= error.msg %></li></ul>
         <%  });
         } %>
+
+        <div class="errores">
+          <ul> </ul>
+          </div>
      
         <label for="title">NOMBRE DEL PRODUCTO</label>
         <input class="espacio-completar" type="text" name="name" id="nombreDelProducto" value="<%=locals.old && old.name ? old.name : '' %>" />
@@ -31,10 +35,12 @@
           <option value="rojo" <%= locals.old && old.category === "rojo" ? 'selected': '' %> >Rojo</option>
           <option value="azul" <%= locals.old && old.category === "azul" ? 'selected': '' %> >Azul</option>
           <option value="verde" <%= locals.old && old.category === "verde" ? 'selected': '' %> >Verde</option>
+          <option value="morado" <%= locals.old && old.category === "morado" ? 'selected': '' %>>Morado</option>
           <option value="amarillo" <%= locals.old && old.category === "amarillo" ? 'selected': '' %> >Amarillo</option>
           <option value="negro" <%= locals.old && old.category === "negro" ? 'selected': '' %> >Negro</option>
           <option value="blanco" <%= locals.old && old.category === "blanco" ? 'selected': '' %> >Blanco</option>
           <option value="gris" <%= locals.old && old.category === "gris" ? 'selected': '' %> >Gris</option>
+          <option value="otro" <%= locals.old && old.category === "otro" ? 'selected': '' %> >Otro</option>
         </select>
         <label for="cat_pro">CATEGORIA</label>
         <select class="espacio-completar"   name="cat_pro" id="colorDelProducto">
@@ -62,6 +68,8 @@
         <input class="boton-añadir" type="submit" value="SUBIR PRODUCTO" />
       </form>
     </main>
+
+    <script src="../../public/js/crearProducto.js"></script>
 
     <%- include('partials/footer.ejs') %>
   </body>

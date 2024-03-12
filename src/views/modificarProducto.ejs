@@ -9,11 +9,17 @@
       <form class="formCrearProducto"  method="POST" action="/products/<%= producto.id %>?_method=PUT" enctype="multipart/form-data">
         <h1 class="titulo">MODIFICAR PRODUCTO </h1>
 
-        <% if(locals.errors){ 
-          errors.forEach(error => { %>
-            <p class="erroresEnUpdate"> <%= error.msg %></p>
+        <% if(locals.errors){ %>
+        <%  errors.forEach(error => { %>
+            <ul class="erroresEnUpdate"> 
+              <li><%= error.msg %></li>
+              </ul>
         <%  });
         } %>
+
+        <div class="errores">
+          <ul> </ul>
+          </div>
 
         <label for="title">NOMBRE DEL PRODUCTO</label>
         <input class="espacio-completar" type="text" name="name" id="nombreDelProducto" value="<%= producto.name %>" />
@@ -35,6 +41,7 @@
           <option value="negro" <%= producto.color == "negro" ? "selected" : "" %>>Negro</option>
           <option value="blanco" <%= producto.color == "blanco" ? "selected" : "" %>>Blanco</option>
           <option value="gris" <%= producto.color == "gris" ? "selected" : "" %>>Gris</option>
+          <option value="otro" <%= producto.color == "otro" ? "selected" : "" %>>Otro</option>
         </select>
         <label for="discount">DESCUENTO</label>
         <input class="espacio-completar" type="number" min="0" max="100" name="discount" id="discount" value="<%= producto.discount %>" />
@@ -48,7 +55,7 @@
     </div>
 
     </main>
-
+<script src="../../public/js/modificarProducto.js"></script>
     <%- include('partials/footer.ejs') %>
   </body>
 </html>
