@@ -742,6 +742,11 @@ i.fa-solid.fa-circle {
   text-align: center;
 }
 
+.erroresEnUpdate,
+.erroresEnCreate{
+  color: red
+}
+
 /* Vista del perfil*/
 #user-container {
   display: flex;
@@ -790,4 +795,5 @@ p {
 .user-CerrarSesion{
   margin-top: 20%;
 }
+
 /*Fin de la vista de perfil*/
