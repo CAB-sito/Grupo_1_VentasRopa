@@ -9,26 +9,32 @@
       <form class="formCrearProducto" action="/products" method="POST" enctype="multipart/form-data">
       
         <h1 class="titulo">CREAR PRODUCTO</h1>
+
+        <% if(locals.errors){ 
+          errors.forEach(error => { %>
+            <p class="erroresEnCreate"> <%= error.msg %></p>
+        <%  });
+        } %>
      
         <label for="title">NOMBRE DEL PRODUCTO</label>
-        <input class="espacio-completar" type="text" name="name" id="nombreDelProducto" />
+        <input class="espacio-completar" type="text" name="name" id="nombreDelProducto" value="<%=locals.old && old.name ? old.name : '' %>" />
         <label for="description">DESCRIPCIÓN</label>
-        <input class="espacio-completar" type="text" name="description" id="descripciónDelProducto" />
+        <input class="espacio-completar" type="text" name="description" id="descripciónDelProducto" value="<%=locals.old && old.description ? old.description : '' %>" />
         <label for="description">MARCA</label>
-        <input class="espacio-completar" type="text" name="marca" id="marcaDelProducto" />
+        <input class="espacio-completar" type="text" name="marca" id="marcaDelProducto" value="<%=locals.old && old.marca ? old.marca : '' %>"  />
         <label for="imagen">IMÁGEN</label>
-        <input class="espacio-completar" type="file" name="imagen" id="imagenDelProducto" />
+        <input class="espacio-completar" type="file" name="imagen" id="imagenDelProducto" value="<%=locals.old && old.imagen ? old.imagen : '' %>"  />
         <label for="price">PRECIO</label>
-        <input class="espacio-completar" type="number" name="price" id="precioDelProducto" />
+        <input class="espacio-completar" type="number" name="price" id="precioDelProducto" value="<%=locals.old && old.price ? old.price : '' %>" />
         <label for="color">COLOR</label>
         <select class="espacio-completar"   name="color" id="colorDelProducto">
-          <option value="rojo">Rojo</option>
-          <option value="azul">Azul</option>
-          <option value="verde">Verde</option>
-          <option value="amarillo">Amarillo</option>
-          <option value="negro">Negro</option>
-          <option value="blanco">Blanco</option>
-          <option value="gris">Gris</option>
+          <option value="rojo" <%= locals.old && old.category === "rojo" ? 'selected': '' %> >Rojo</option>
+          <option value="azul" <%= locals.old && old.category === "azul" ? 'selected': '' %> >Azul</option>
+          <option value="verde" <%= locals.old && old.category === "verde" ? 'selected': '' %> >Verde</option>
+          <option value="amarillo" <%= locals.old && old.category === "amarillo" ? 'selected': '' %> >Amarillo</option>
+          <option value="negro" <%= locals.old && old.category === "negro" ? 'selected': '' %> >Negro</option>
+          <option value="blanco" <%= locals.old && old.category === "blanco" ? 'selected': '' %> >Blanco</option>
+          <option value="gris" <%= locals.old && old.category === "gris" ? 'selected': '' %> >Gris</option>
         </select>
         <label for="cat_pro">CATEGORIA</label>
         <select class="espacio-completar"   name="cat_pro" id="colorDelProducto">
@@ -37,12 +43,12 @@
         </select>
         <label for="talle">TALLE</label>
         <select name="talle" id="talle">
-          <option value="xs">XS</option>
-          <option value="s">S</option>
-          <option value="m">M</option>
-          <option value="l">L</option>
-          <option value="xl">XL</option>
-          <option value="xxl">XXL</option>
+          <option value="xs" <%= locals.old && old.category === "xs" ? 'selected': '' %> ></option>>XS</option>
+          <option value="s" <%= locals.old && old.category === "s" ? 'selected': '' %>>S</option>
+          <option value="m" <%= locals.old && old.category === "m" ? 'selected': '' %>>M</option>
+          <option value="l" <%= locals.old && old.category === "l" ? 'selected': '' %>>L</option>
+          <option value="xl" <%= locals.old && old.category === "xl" ? 'selected': '' %> >XL</option>
+          <option value="xxl" <%= locals.old && old.category === "xxl" ? 'selected': '' %>>XXL</option>
         </select>
         <label for="discount">DESCUENTO</label>
         <input class="espacio-completar"
@@ -51,6 +57,7 @@
           max="100"
           name="discount"
           id="descuentoDelProducto"
+          value="<%=locals.old && old.discount ? old.discount : '' %>"
         />
         <input class="boton-añadir" type="submit" value="SUBIR PRODUCTO" />
       </form>

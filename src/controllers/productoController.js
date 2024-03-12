@@ -1,6 +1,7 @@
 //const fs = require("fs");
 //const path = require("path");
 const db = require("../database/models");
+const {validationResult}= require('express-validator');
 
 
 
@@ -49,20 +50,26 @@ const productoController = {
       imagen = "default.png ";
     }
 
-    db.Producto.create({
-      nombre: req.body.name,
-      marca: req.body.marca,
-      color: req.body.color,
-      precio: req.body.price,
-      descuento: req.body.discount,
-      talle: req.body.talle,
-      imagen: imagen,
-      id_categoria: req.body.cat_pro
-    });
-   
-    res.redirect("/products");
+    let errors = validationResult(req);
 
-    
+    if(errors.isEmpty()){
+      db.Producto.create({
+        nombre: req.body.name,
+        marca: req.body.marca,
+        color: req.body.color,
+        precio: req.body.price,
+        descuento: req.body.discount,
+        talle: req.body.talle,
+        imagen: imagen,
+        id_categoria: req.body.cat_pro
+      });
+
+      res.redirect("/products");
+
+    }else{
+
+      res.render("crearProducto", { usuario: req.session.usuario, errors:errors.array(), old:req.body  })
+    }
   },
 
   listar: (req, res) => {
@@ -78,7 +85,7 @@ const productoController = {
         if (!producto) {
           return res.send("No se encontro el producto");
         }else{
-          res.render("modificarProducto", {producto: producto,usuario: req.session.usuario});
+          res.render("modificarProducto", {producto: producto, usuario: req.session.usuario});
         }
       });
     
@@ -91,6 +98,10 @@ const productoController = {
     } else {
       imagen = "default.png";
     }
+
+    let errors = validationResult(req)
+
+    if(errors.isEmpty()){
     db.Producto.create({
       nombre: req.body.name,
       marca: req.body.marca,
@@ -103,7 +114,10 @@ const productoController = {
     });
     res.redirect("/products");
     
-  },
+  }else{
+    res.render("modificarProducto", {producto: producto, usuario: req.session.usuario, errors:errors.array()} );
+
+  }},
 
   eliminar: (req, res) => { 
     
