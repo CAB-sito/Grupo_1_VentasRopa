@@ -51,3 +51,5 @@ TABLERO DE TRABAJO sprint 4: https://trello.com/invite/b/vIb0uDow/ATTIdb1207e598
 TABLERO DE TRABAJO sprint 5: https://trello.com/invite/b/AmBf4TA3/ATTI37a1023413d16c3520e8fc896e6fa925D54B153C/grupo1sprint5
 
 TABLERO DE TRABAJO sprint 7:https://trello.com/b/YnMblSuh/grupo1sprint7
+
+TABLERO DE TRABAJO sprint 8:https://trello.com/invite/b/pEy1tvXy/ATTI7e5d47c1b42b4a540a22062894492981340F881A/grupo1sprint8

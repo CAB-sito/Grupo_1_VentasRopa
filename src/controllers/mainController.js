@@ -38,6 +38,7 @@ const controller = {
     });*/
   },
   register: (req, res) => {
+    console.log(req.session.usuario)
     res.render("registro", { usuario: req.session.usuario });
   },
   login: (req, res) => {

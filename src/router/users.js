@@ -57,9 +57,9 @@ router.post(
       .not()
       .isEmpty()
       .withMessage("La categoria es obligatoria"),
-    check("imagen")
+    /*check("imagen")
       .extensions(["jpg", "png", "jpeg"])
-      .withMessage("La imagen debe ser jpg, jpeg o png"),
+      .withMessage("La imagen debe ser jpg, jpeg o png"),*/
     check("password")
       .isLength({ min: 8 })
       .withMessage("La contraseña debe ser de al menos 8 caracteres"),

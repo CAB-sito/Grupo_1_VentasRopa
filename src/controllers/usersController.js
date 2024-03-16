@@ -18,7 +18,7 @@ const usersController = {
   registrarUsuario: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      let usersJSON = fs.readFileSync(
+      /*let usersJSON = fs.readFileSync(
         path.resolve(__dirname, "../data/user.json"),
         {
           encoding: "utf-8",
@@ -29,8 +29,8 @@ const usersController = {
         users = [];
       } else {
         users = JSON.parse(usersJSON);
-      }
-
+      }*/
+      
       let imagen;
       if (req.file) {
         imagen = req.file.filename;
@@ -69,7 +69,7 @@ const usersController = {
   processLogin: function (req, res) {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      let usersJSON = fs.readFileSync(
+      /*let usersJSON = fs.readFileSync(
         path.resolve(__dirname, "../data/user.json"),
         {
           encoding: "utf-8",
@@ -80,7 +80,7 @@ const usersController = {
         users = [];
       } else {
         users = JSON.parse(usersJSON);
-      }
+      }*/
 
       let usuarioALoguearse;
 

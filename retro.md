@@ -47,3 +47,10 @@ Sprint 7:
 3.Reuniones semanales, seguir con la buena organizacion y comunicacion de equipo.
 4.Mezcla de idiomas a la hora de asignar un nombre a las variables.
 5.Dejar de trabajar directamente en la rama principal.
+
+Sprint 8:
+1.Trabajar y revisar las ramas merge con nombre del integrante.
+2.Mantener actualizado el tablero de trello, informar sobre las realizacion de tareas.
+3.Reuniones semanales, seguir con la buena organizacion y comunicacion de equipo.
+4.Mezcla de idiomas a la hora de asignar un nombre a las variables.
+5.Dejar de trabajar directamente en la rama principal.
