@@ -18,18 +18,7 @@ const usersController = {
   registrarUsuario: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      /*let usersJSON = fs.readFileSync(
-        path.resolve(__dirname, "../data/user.json"),
-        {
-          encoding: "utf-8",
-        }
-      );
-      let users;
-      if (usersJSON == "") {
-        users = [];
-      } else {
-        users = JSON.parse(usersJSON);
-      }*/
+    
       
       let imagen;
       if (req.file) {
@@ -37,18 +26,33 @@ const usersController = {
       } else {
         imagen = "defaultUsers.jpg";
       }
+      req.session.usuario={
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        email: req.body.email,
+        direccion: req.body.direccion,
+        codigo_postal: req.body.codigoPostal,
+        ciudad: req.body.ciudad,
+        contrasenia: bcrypt.hashSync(req.body.password, 10),
+        imagen: imagen,
+        id_categoria: req.body.login,
+      }
+      
       db.Usuario.create({
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         email: req.body.email,
         direccion: req.body.direccion,
-        codigoPostal: req.body.codigoPostal,
+        codigo_postal: req.body.codigoPostal,
         ciudad: req.body.ciudad,
         contrasenia: bcrypt.hashSync(req.body.password, 10),
         imagen: imagen,
         id_categoria: req.body.login,
-      });
-      res.redirect("/");
+      })
+      .then(()=>{
+        res.redirect("/")
+      })
+      
     } else {
       return res.render("registro", {
         errors: errors.errors,
@@ -67,53 +71,47 @@ const usersController = {
   },
 
   processLogin: function (req, res) {
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
-      /*let usersJSON = fs.readFileSync(
-        path.resolve(__dirname, "../data/user.json"),
-        {
-          encoding: "utf-8",
-        }
-      );
-      let users;
-      if (usersJSON == "") {
-        users = [];
-      } else {
-        users = JSON.parse(usersJSON);
-      }*/
-
-      let usuarioALoguearse;
-
-      for (let i = 0; i < users.length; i++) {
-        if (users[i].email == req.body.email) {
-          if (bcrypt.compareSync(req.body.password, users[i].password)) {
-            usuarioALoguearse = users[i];
-            break;
+    const {password, email, recordame} = req.body;
+    let users;
+    db.Usuario.findAll()
+     .then((data)=> users = data)
+     .then(()=>{let errors = validationResult(req);
+      console.log( typeof users)
+      if (errors.isEmpty()) {
+        
+        let usuarioALoguearse;
+  
+        for (let i = 0; i < users.length; i++) {
+          if (users[i].email == email) {
+            if (bcrypt.compareSync(password, users[i].contrasenia)) {
+              usuarioALoguearse = users[i];
+              break;
+            }
           }
         }
-      }
-      if (usuarioALoguearse == undefined) {
+        if (usuarioALoguearse == undefined) {
+          return res.render("login", {
+            errors: [{ msg: "Usuario o contraseña incorrectos" }],
+            usuario: req.session.usuario,
+          });
+        }
+  
+        if (recordame) {
+          res.cookie("recordame", usuarioALoguearse.email, {
+            maxAge: 1000 * 60 * 30,
+          });
+        }
+  
+        req.session.usuario = usuarioALoguearse;
+        res.redirect("/users/perfil");
+      } else {
         return res.render("login", {
-          errors: [{ msg: "Usuario o contraseña incorrectos" }],
+          errors: errors.errors,
           usuario: req.session.usuario,
         });
       }
-
-      if (req.body.recordame) {
-        res.cookie("recordame", usuarioALoguearse.email, {
-          maxAge: 1000 * 60 * 30,
-        });
-      }
-
-      req.session.usuario = usuarioALoguearse;
-      res.redirect("/users/perfil");
-    } else {
-      return res.render("login", {
-        errors: errors.errors,
-        usuario: req.session.usuario,
-      });
-    }
-  },
+    })}
+    ,
   cerrarSes: (req, res) => {
     res.clearCookie("Recordame");
     req.session.usuario = undefined;

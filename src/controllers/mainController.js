@@ -20,25 +20,8 @@ const controller = {
         res.render("index", {productosDestacados,ofertas, usuario: req.session.usuario})
       })
     
-  
-    //const productosDestacados = productos.filter((product) => product.compra.id == 1);
-    //const ofertas = productos.filter((product) => product.compra.id == 2);
-
-    //res.render("index", {productosDestacados,ofertas, usuario: req.session.usuario})
-
-    /*productos = productList();
-    const productosDestacados = productos.filter(
-      (product) => product.category == "productos destacados"
-    );
-    const ofertas = productos.filter((product) => product.category == "Oferta");
-    res.render("index", {
-      productosDestacados,
-      ofertas,
-      usuario: req.session.usuario,
-    });*/
   },
   register: (req, res) => {
-    console.log(req.session.usuario)
     res.render("registro", { usuario: req.session.usuario });
   },
   login: (req, res) => {

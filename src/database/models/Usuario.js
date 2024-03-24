@@ -47,7 +47,7 @@ module.exports = (sequelize, dataTypes) => {
     };
   
     let config = {
-      tableName: "usuario",
+      tableName: "usuarios",
       timestamps: false,
   
         /* timestamps: true,
@@ -56,21 +56,21 @@ module.exports = (sequelize, dataTypes) => {
           deletedAt: false */
     };
   
-    const usuario = sequelize.define(alias, cols, config);
+    const Usuario = sequelize.define(alias, cols, config);
   
     //ASOCIACIONES: Categoria de usuario:
-    usuario.associate = function (models) {
-      usuario.belongsTo(models.CategoriaUsuario, {
+    Usuario.associate = function (models) {
+      Usuario.belongsTo(models.CategoriaUsuario, {
         as: "categoriaUsuario",
         foreignKey: "id_categoria",
       });
   
       //ASOCIACIONES:carrito de compras:
-      usuario.hasMany(models.Compra,{
+      Usuario.hasMany(models.Compra,{
           as: "Compra",
           foreignKey: "id_usuario",
         });
     };
   
-    return usuario;
+    return Usuario;
   };

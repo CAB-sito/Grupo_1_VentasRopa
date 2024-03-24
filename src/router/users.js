@@ -40,30 +40,30 @@ router.post(
 //registro con post:
 router.post(
   "/registro",
-  [
-    check("nombre").not().isEmpty().withMessage("El nombre es obligatorio"),
-    check("apellido").not().isEmpty().withMessage("El apellido es obligatorio"),
-    check("email").isEmail().withMessage("Email no válido"),
-    check("direccion")
-      .not()
-      .isEmpty()
-      .withMessage("La direccion es obligatorio"),
-    check("ciudad").not().isEmpty().withMessage("La ciudad es obligatorio"),
-    check("codigoPostal")
-      .isPostalCode("any")
-      .isLength({ min: 4 })
-      .withMessage("el codigo postal debe tener al menos 4 caracteres"),
-    check("categoria")
-      .not()
-      .isEmpty()
-      .withMessage("La categoria es obligatoria"),
-    /*check("imagen")
-      .extensions(["jpg", "png", "jpeg"])
-      .withMessage("La imagen debe ser jpg, jpeg o png"),*/
-    check("password")
-      .isLength({ min: 8 })
-      .withMessage("La contraseña debe ser de al menos 8 caracteres"),
-  ],
+  //  [
+  //    check("nombre").not().isEmpty().withMessage("El nombre es obligatorio"),
+  //    check("apellido").not().isEmpty().withMessage("El apellido es obligatorio"),
+  //    check("email").isEmail().withMessage("Email no válido"),
+  //    check("direccion")
+  //     .not()
+  //     .isEmpty()
+  //     .withMessage("La direccion es obligatorio"),
+  //    check("ciudad").not().isEmpty().withMessage("La ciudad es obligatorio"),
+  //   check("codigoPostal")
+  //      .isPostalCode("any")
+  //     .isLength({ min: 4 })
+  //       .withMessage("el codigo postal debe tener al menos 4 caracteres"),
+  //     check("categoria")
+  //      .not()
+  //       .isEmpty()
+  //       .withMessage("La categoria es obligatoria"),
+  //     /*check("imagen")
+  //       .extensions(["jpg", "png", "jpeg"])
+  //       .withMessage("La imagen debe ser jpg, jpeg o png"),*/
+  //     check("password")
+  //       .isLength({ min: 8 })
+  //       .withMessage("La contraseña debe ser de al menos 8 caracteres"),
+  //   ],
   update.single("imagen"),
   usersController.registrarUsuario
 );
