@@ -1,4 +1,3 @@
-const controller = require("../controllers/usersController");
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
@@ -40,31 +39,37 @@ router.post(
 //registro con post:
 router.post(
   "/registro",
-  //  [
-  //    check("nombre").not().isEmpty().withMessage("El nombre es obligatorio"),
-  //    check("apellido").not().isEmpty().withMessage("El apellido es obligatorio"),
-  //    check("email").isEmail().withMessage("Email no válido"),
-  //    check("direccion")
-  //     .not()
-  //     .isEmpty()
-  //     .withMessage("La direccion es obligatorio"),
-  //    check("ciudad").not().isEmpty().withMessage("La ciudad es obligatorio"),
-  //   check("codigoPostal")
-  //      .isPostalCode("any")
-  //     .isLength({ min: 4 })
-  //       .withMessage("el codigo postal debe tener al menos 4 caracteres"),
-  //     check("categoria")
-  //      .not()
-  //       .isEmpty()
-  //       .withMessage("La categoria es obligatoria"),
-  //     /*check("imagen")
-  //       .extensions(["jpg", "png", "jpeg"])
-  //       .withMessage("La imagen debe ser jpg, jpeg o png"),*/
-  //     check("password")
-  //       .isLength({ min: 8 })
-  //       .withMessage("La contraseña debe ser de al menos 8 caracteres"),
-  //   ],
   update.single("imagen"),
+  [
+    check("nombre")
+      .isLength({ min: 1 })
+      .withMessage("El nombre es obligatorio"),
+    check("apellido")
+      .isLength({ min: 1 })
+      .withMessage("El apellido es obligatorio"),
+    check("email")
+      .isLength({ min: 1 })
+      .isEmail()
+      .withMessage("Email no válido"),
+    check("direccion")
+      .isLength({ min: 1 })
+      .withMessage("La direccion es obligatorio"),
+    check("ciudad")
+      .isLength({ min: 1 })
+      .withMessage("La ciudad es obligatorio"),
+    check("codigoPostal")
+      .isLength({ min: 4 })
+      .withMessage("el codigo postal debe tener al menos 4 caracteres"),
+    check("categoria")
+      .isWhitelisted(["1", "2"])
+      .withMessage("La categoria es obligatoria"),
+    /*check("imagen")
+        .extensions(["jpg", "png", "jpeg"])
+        .withMessage("La imagen debe ser jpg, jpeg o png"),*/
+    check("password")
+      .isLength({ min: 8 })
+      .withMessage("La contraseña debe ser de al menos 8 caracteres"),
+  ],
   usersController.registrarUsuario
 );
 

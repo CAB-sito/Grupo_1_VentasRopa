@@ -13,14 +13,14 @@
         enctype="multipart/form-data"
       >
 
-      <% if(typeof errors !== 'undefined') { %>
-        <ul style="color: red;">
-          <% for(let i=0; i<errors.length; i++) { %>
-            <li style="list-style: none;">
-              <%=errors[i].msg%>
-            </li>
+        <% if(typeof errors !== 'undefined') { %>
+          <ul style="color: red;">
+            <% for(let i=0; i<errors.length; i++) { %>
+              <li style="list-style: none;">
+                <%=errors[i].msg%>
+              </li>
             <% } %>
-        </ul>
+          </ul>
         <% } %>
 
         <p class="text-register">Crear cuenta</p>
