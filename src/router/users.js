@@ -6,6 +6,7 @@ const usersController = require("../controllers/usersController");
 const { check } = require("express-validator");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
+const db = require("../database/models");
 
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -19,6 +20,61 @@ let storage = multer.diskStorage({
 });
 
 const update = multer({ storage: storage });
+
+const validacionesRegistro = [
+  check("nombre")
+    .notEmpty()
+    .withMessage("El nombre es obligatorio")
+    .bail()
+    .isLength({ min: 2 })
+    .withMessage("El nombre debe tener un minimo de 2 caracteres"),
+  check("apellido")
+    .notEmpty()
+    .withMessage("El apellido es obligatorio")
+    .bail()
+    .isLength({ min: 2 })
+    .withMessage("El apellido debe tener un minimo de 2 caracteres"),
+  check("email")
+    .notEmpty()
+    .withMessage("El email es obligatorio")
+    .bail()
+    .isEmail()
+    .withMessage("Email no válido")
+    .custom((value) => {
+      return db.Usuario.findOne({ where: { email: value } }).then((usuario) => {
+        if (usuario) {
+          return Promise.reject("Este correo electrónico ya está en uso");
+        }
+      });
+    }),
+  check("direccion").notEmpty().withMessage("La direccion es obligatorio"),
+  check("ciudad").notEmpty().withMessage("La ciudad es obligatorio"),
+  check("codigoPostal")
+    .isLength({ min: 4 })
+    .withMessage("el codigo postal debe tener al menos 4 caracteres"),
+  check("categoria")
+    .isWhitelisted(["1", "2"])
+    .withMessage("La categoria es obligatoria"),
+  check("imagen").custom((value, { req }) => {
+    let file = req.file;
+    let extencionesAceptadas = [".jpg", ".jpeg", ".png", ".gif"];
+    if (!file) {
+      throw new Error("Tienes que subir una imagen");
+    } else {
+      let fileExtension = path.extname(file.originalname);
+      if (!extencionesAceptadas.includes(fileExtension)) {
+        throw new Error(
+          "Las extensiones de archivo permitidas son " +
+            extencionesAceptadas.join(",")
+        );
+      }
+    }
+    return true;
+  }),
+  check("password")
+    .isLength({ min: 8 })
+    .withMessage("La contraseña debe ser de al menos 8 caracteres"),
+];
 
 //perfil:
 router.get("/perfil", authMiddleware, usersController.usuario);
@@ -40,36 +96,7 @@ router.post(
 router.post(
   "/registro",
   update.single("imagen"),
-  [
-    check("nombre")
-      .isLength({ min: 1 })
-      .withMessage("El nombre es obligatorio"),
-    check("apellido")
-      .isLength({ min: 1 })
-      .withMessage("El apellido es obligatorio"),
-    check("email")
-      .isLength({ min: 1 })
-      .isEmail()
-      .withMessage("Email no válido"),
-    check("direccion")
-      .isLength({ min: 1 })
-      .withMessage("La direccion es obligatorio"),
-    check("ciudad")
-      .isLength({ min: 1 })
-      .withMessage("La ciudad es obligatorio"),
-    check("codigoPostal")
-      .isLength({ min: 4 })
-      .withMessage("el codigo postal debe tener al menos 4 caracteres"),
-    check("categoria")
-      .isWhitelisted(["1", "2"])
-      .withMessage("La categoria es obligatoria"),
-    /*check("imagen")
-        .extensions(["jpg", "png", "jpeg"])
-        .withMessage("La imagen debe ser jpg, jpeg o png"),*/
-    check("password")
-      .isLength({ min: 8 })
-      .withMessage("La contraseña debe ser de al menos 8 caracteres"),
-  ],
+  validacionesRegistro,
   usersController.registrarUsuario
 );
 
