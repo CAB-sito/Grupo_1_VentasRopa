@@ -17,18 +17,46 @@ const productoController = {
   },
   detail: (req, res) => {
     const id = req.params.id;
-    db.Producto.findByPk(id).then((producto) => {
+    db.Producto.findByPk(id, {
+      include: [{
+        model: db.categoria_producto,
+        attributes: ['nombre'],
+        as: 'categoria'
+      }]
+    })
+    .then((producto) => {
       if (!producto) {
-        return res.send("No se encontro el producto");
-      } else {
-        res.render("details", {
-          producto: producto,
-          usuario: req.session.usuario,
-        });
+        return res.status(404).json({ mensaje: "No se encontró el producto" });
       }
+
+      // array de relaciones uno a muchos
+      const relaciones = {
+        categories: [producto.categoria ? producto.categoria.nombre : 'Sin categoría'],
+      };
+
+      // construye la URL de la imagen del producto
+      const serverUrl = `${req.protocol}://${req.get('host')}`;
+      const imageUrl = `${serverUrl}${producto.imagen}`;
+
+      const respuesta = {
+        id: producto.id,
+        nombre: producto.nombre,
+        marca: producto.marca,
+        color: producto.color,
+        precio: producto.precio,
+        descuento: producto.descuento,
+        talle: producto.talle,
+        imagen: imageUrl,
+        id_categoria: producto.id_categoria,
+        ...relaciones // verificas si el producto tiene una categoría asociada (producto.categoria).Si lo tiene,se agrega el nombre de la categoría al array categories
+      };
+      res.status(200).json(respuesta);
+    })
+    .catch((error) => {
+      console.error('Error al buscar el producto:', error);
+      res.status(500).json({ error: 'Error interno del servidor' });
     });
   },
-
   cart: (req, res) => {
     db.Producto.findAll().then((productos) => {
       res.render("productCart", {
@@ -74,11 +102,39 @@ const productoController = {
   },
 
   listar: (req, res) => {
-    db.Producto.findAll().then((productos) => {
-      res.render("listarProducto", {
-        listaProductos: productos,
-        usuario: req.session.usuario,
+    db.producto.findAll({
+      attributes: ['id', 'nombre'],
+      include: [{
+        model: db.categoria_producto,
+        attributes: ['nombre'],
+        as: 'categoria'
+      }]
+    })
+    .then((productos) => {
+      // conteo total de productos
+      const countProduct = productos.length;
+      
+      // conteo de productos por categoría
+      const countByCategory = {};
+      productos.forEach((producto) => {
+        const categoriaNombre = producto.categoria ? producto.categoria.nombre : 'Sin categoría';
+        countByCategory[categoriaNombre] = (countByCategory[categoriaNombre] || 0) + 1;
       });
+      // array de productos
+      const products = productos.map((producto) => ({
+        id: producto.id,
+        name: producto.nombre,
+        categories: producto.categoria ? [producto.categoria.nombre] : ['Sin categoría'],
+        detail: `api/productos/${producto.id}`,
+      }));
+      // respuesta
+      const respuesta = {
+        countProduct,
+        countByCategory,
+        products,
+      };
+      // envío de la respuesta
+      res.status(200).json(respuesta);
     });
   },
   modificar: (req, res) => {

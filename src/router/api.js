@@ -10,9 +10,5 @@ router.get("/users/:id", usersController.detallesUsuario);
 //api producto 
 router.get("/products", productoController.listar);
 router.get("/products/:id", productoController.detail);
-router.post("/products", productoController.crear);
-router.put("/products/:id", productoController.modificar);
-router.delete("/products/:id", productoController.eliminar);
-
 
 module.exports = router;
