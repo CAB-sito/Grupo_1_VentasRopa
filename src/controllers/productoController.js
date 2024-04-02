@@ -74,6 +74,8 @@ const productoController = {
   },
 
   listar: (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*') //permite acceder a la api desde el navegador, sino sale error por CORS
+
     db.Producto.findAll().then((productos) => {
       res.render("listarProducto", {
         listaProductos: productos,

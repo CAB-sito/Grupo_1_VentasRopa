@@ -12,6 +12,7 @@ function userList() {
 
 const usersController = {
   listar: (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*')  //permite acceder a la api desde el navegador, sino sale error por CORS
     const usuarios = db.Usuario.findAll({
       attributes: ["id", ["nombre", "name"], "email"],
     }).then((usuarios) => {
@@ -26,6 +27,7 @@ const usersController = {
     });
   },
   detallesUsuario: (req, res) => {
+
     const id = req.params.id;
     db.Usuario.findByPk(id, {
       attributes: { exclude: ["contrasenia", "id_categoria"] },
