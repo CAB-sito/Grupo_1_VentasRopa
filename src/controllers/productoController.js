@@ -102,6 +102,7 @@ const productoController = {
   },
 
   listar: (req, res) => {
+<<<<<<< HEAD
     db.producto.findAll({
       attributes: ['id', 'nombre'],
       include: [{
@@ -119,6 +120,14 @@ const productoController = {
       productos.forEach((producto) => {
         const categoriaNombre = producto.categoria ? producto.categoria.nombre : 'Sin categoría';
         countByCategory[categoriaNombre] = (countByCategory[categoriaNombre] || 0) + 1;
+=======
+    res.header('Access-Control-Allow-Origin', '*') //permite acceder a la api desde el navegador, sino sale error por CORS
+
+    db.Producto.findAll().then((productos) => {
+      res.render("listarProducto", {
+        listaProductos: productos,
+        usuario: req.session.usuario,
+>>>>>>> d41940d9e5dc67bf04ac5ec9909dbaeda82fc5c9
       });
       // array de productos
       const products = productos.map((producto) => ({
