@@ -17,11 +17,24 @@ const productoController = {
   },
   detail: (req, res) => {
     const id = req.params.id;
+    db.Producto.findByPk(id).then((producto) => {
+      if (!producto) {
+        return res.send("No se encontro el producto");
+      } else {
+        res.render("details", {
+          producto: producto,
+          usuario: req.session.usuario,
+        });
+      }
+    });
+  },
+  detailApi: (req, res) => {
+    const id = req.params.id;
     db.Producto.findByPk(id, {
       include: [{
-        model: db.categoria_producto,
+        model: db.CategoriaProducto,
         attributes: ['nombre'],
-        as: 'categoria'
+        as: 'CategoriaProducto'
       }]
     })
     .then((producto) => {
@@ -31,7 +44,7 @@ const productoController = {
 
       // array de relaciones uno a muchos
       const relaciones = {
-        categories: [producto.categoria ? producto.categoria.nombre : 'Sin categoría'],
+        categories: [producto.CategoriaProducto ? producto.CategoriaProducto.nombre : 'Sin categoría'],
       };
 
       // construye la URL de la imagen del producto
@@ -100,15 +113,21 @@ const productoController = {
       });
     }
   },
-
   listar: (req, res) => {
-<<<<<<< HEAD
-    db.producto.findAll({
+    db.Producto.findAll().then((productos) => {
+      res.render("listarProducto", {
+        listaProductos: productos,
+        usuario: req.session.usuario,
+      });
+    });
+  },
+  listarApi: (req, res) => {
+    db.Producto.findAll({
       attributes: ['id', 'nombre'],
       include: [{
-        model: db.categoria_producto,
+        model: db.CategoriaProducto,
         attributes: ['nombre'],
-        as: 'categoria'
+        as: 'CategoriaProducto'
       }]
     })
     .then((productos) => {
@@ -118,22 +137,15 @@ const productoController = {
       // conteo de productos por categoría
       const countByCategory = {};
       productos.forEach((producto) => {
-        const categoriaNombre = producto.categoria ? producto.categoria.nombre : 'Sin categoría';
+        console.log(producto)
+        const categoriaNombre = producto.CategoriaProducto ? producto.CategoriaProducto.nombre : 'Sin categoría';
         countByCategory[categoriaNombre] = (countByCategory[categoriaNombre] || 0) + 1;
-=======
-    res.header('Access-Control-Allow-Origin', '*') //permite acceder a la api desde el navegador, sino sale error por CORS
-
-    db.Producto.findAll().then((productos) => {
-      res.render("listarProducto", {
-        listaProductos: productos,
-        usuario: req.session.usuario,
->>>>>>> d41940d9e5dc67bf04ac5ec9909dbaeda82fc5c9
       });
       // array de productos
       const products = productos.map((producto) => ({
         id: producto.id,
         name: producto.nombre,
-        categories: producto.categoria ? [producto.categoria.nombre] : ['Sin categoría'],
+        categories: producto.CategoriaProducto ? [producto.CategoriaProducto.nombre] : ['Sin categoría'],
         detail: `api/productos/${producto.id}`,
       }));
       // respuesta

@@ -8,7 +8,7 @@ router.get("/users", usersController.listar);
 router.get("/users/:id", usersController.detallesUsuario);
 
 //api producto 
-router.get("/products", productoController.listar);
-router.get("/products/:id", productoController.detail);
+router.get("/products", productoController.listarApi);
+router.get("/products/:id", productoController.detailApi);
 
 module.exports = router;
