@@ -15,7 +15,8 @@ const validacionesProductos = [
     let file = req.file;
     let extencionesAceptadas= ['.jpg', '.jpeg' , '.png' , '.gif'];
     if(!file){
-      throw new Error('Tienes que subir una imagen');
+      file = "default.png ";
+      //throw new Error('Tienes que subir una imagen');
     }else{
       let fileExtension = path.extname(file.originalname);
       if(!extencionesAceptadas.includes(fileExtension)){

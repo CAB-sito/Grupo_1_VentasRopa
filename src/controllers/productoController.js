@@ -164,6 +164,7 @@ const productoController = {
       if (!producto) {
         return res.send("No se encontro el producto");
       } else {
+        
         res.render("modificarProducto", {
           producto: producto,
           usuario: req.session.usuario,

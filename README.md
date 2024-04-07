@@ -18,20 +18,13 @@ Edad: 25 años.
 Donde vivo: Santiago Del Estero, capital.
 Extra: Me gusta escuchar música (aunque no cuando estudio, porque me desconcentra), ver películas y cocinar.
 
--Ivo Carrizo:
-Edad: 30 años. 
-Donde vivo: Santiago del Estero, Capital. 
-Extra: Me gusta escuchar musica y jugar al futbol.
 
 -Cecilia Vanesa Castaño:
 Edad: 32 años.
 Donde vivo: Santiago del Estero, Capital.
 Extra: mi hobby es la decoracion y artes manuales.
 
--Daniel Alejandro Celiz:
-Edad: 18 años
-donde vivo: Santiago del Estero, Capital.
-Extra: me gusta jugar a la pelota y a los videojuegos.
+
 
 Listado de referentes del mercado:
 
@@ -53,3 +46,14 @@ TABLERO DE TRABAJO sprint 5: https://trello.com/invite/b/AmBf4TA3/ATTI37a1023413
 TABLERO DE TRABAJO sprint 7:https://trello.com/b/YnMblSuh/grupo1sprint7
 
 TABLERO DE TRABAJO sprint 8:https://trello.com/invite/b/pEy1tvXy/ATTI7e5d47c1b42b4a540a22062894492981340F881A/grupo1sprint8
+
+
+Experiencia al trabajar en equipo:
+
+1. De que se trata la pagina
+2. Presetacion de BD.
+3. Estructura interna del proyecto
+4. presentacion de dashboard
+
+
+
