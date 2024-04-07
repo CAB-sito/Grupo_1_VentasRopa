@@ -29,6 +29,8 @@ const productoController = {
     });
   },
   detailApi: (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*')  //permite acceder a la api desde el navegador, sino sale error por CORS
+
     const id = req.params.id;
     db.Producto.findByPk(id, {
       include: [{
@@ -122,6 +124,8 @@ const productoController = {
     });
   },
   listarApi: (req, res) => {
+ res.header('Access-Control-Allow-Origin', '*')  //permite acceder a la api desde el navegador, sino sale error por CORS
+
     db.Producto.findAll({
       attributes: ['id', 'nombre'],
       include: [{
