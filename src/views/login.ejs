@@ -11,6 +11,8 @@
       
 
         <form class="form-login" action="/users/login" method="POST" class="form">
+
+    
           <% if(typeof errors !== 'undefined') { %>
             <ul style="color: red;">
               <% for(let i=0; i<errors.length; i++) { %>
@@ -20,12 +22,18 @@
                 <% } %>
             </ul>
             <% } %>
+         
+            <section class="errores">
+              <ul>
+              </ul>
+            </section>
+
             <p class="text-login">Iniciar sesion</p>
             <div class="login-container">
                 <label>CORREO ELECTRONICO: </label> <br>
-                <input type="email" name="email" class="campo-login" required>
+                <input type="email" name="email" class="campo-login" id="emailDelUsuario" >
                 <label>CONTRASEÑA: </label> <br>
-                <input type="password" name="password" class="campo-login" required>  
+                <input type="password" name="password" class="campo-login" id="passwordDelUsuario" >  
             </div>
            
             <a href="/registro" class="crear-cuenta">Crear cuenta</a>
@@ -38,6 +46,7 @@
         </form>
 
     </main>
+    <script src="/js/validacionLoginUsuario.js"></script>
     <%- include('partials/footer');-%>
 </body>
 </html>

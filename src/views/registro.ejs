@@ -7,12 +7,12 @@
 
     <main>
       <form
-        class="form"
+        class="formCrearUsuario"
         action="/users/registro"
         method="POST"
         enctype="multipart/form-data"
       >
-
+  
         <% if(typeof errors !== 'undefined') { %>
           <ul style="color: red;">
             <% for(let i=0; i<errors.length; i++) { %>
@@ -22,27 +22,32 @@
             <% } %>
           </ul>
         <% } %>
+      
+        <section class="errores">
+          <ul>
+          </ul>
+        </section>
 
         <p class="text-register">Crear cuenta</p>
         <div class="register-container">
           <div class="nom-completo">
             <div class="nom">
               <p>NOMBRE</p>
-              <input type="text" name="nombre" class="nom-campo" required />
+              <input type="text" name="nombre" class="nom-campo" id="nombreDelUsuario" />
             </div>
             <div class="ape">
               <p>APELLIDO</p>
-              <input type="text" name="apellido" class="nom-campo" required />
+              <input type="text" name="apellido" class="nom-campo" id="apellidoDelUsuario" />
             </div>
           </div>
           <p>CORREO ELECTRONICO</p>
-          <input type="email" name="email" class="campo-registro" required />
+          <input type="email" name="email" class="campo-registro" id="emailDelUsuario" />
           <p>DIRECCION</p>
-          <input type="text" name="direccion" class="campo-registro" required />
+          <input type="text" name="direccion" class="campo-registro"  />
           <div class="nom-completo">
             <div class="nom">
               <p>CIUDAD</p>
-              <input type="text" name="ciudad" class="nom-campo" required />
+              <input type="text" name="ciudad" class="nom-campo" />
             </div>
             <div class="ape">
               <p>COD. POSTAL</p>
@@ -50,7 +55,6 @@
                 type="text"
                 name="codigoPostal"
                 class="nom-campo"
-                required
               />
             </div>
           </div>
@@ -70,8 +74,8 @@
           <input
             type="password"
             name="password"
+            id="passwordDelUsuario"
             class="campo-registro"
-            required
           />
         </div>
         <br />
@@ -80,7 +84,7 @@
         <br />
       </form>
     </main>
-
+    <script src="/js/validacionRegistroUsuario.js"></script>
     <%- include('partials/footer');-%>
   </body>
 </html>
