@@ -1,67 +1,66 @@
 window.addEventListener("load", function () {
+  let formulario = document.querySelector("form.formCrearProducto");
+  
 
-    let formulario = document.querySelector("form.formCrearProducto")
+  formulario.addEventListener("submit", function (event) {
     let errores = [];
+    let nombre = document.getElementById("nombreDelProducto");
+    if (nombre.value == "") {
+      errores.push("El campo nombre del producto es obligatorio");
+    } else if (nombre.value.length < 5) {
+      errores.push("El campo nombre del producto debe tener como mínimo 5 caracteres");
+    }
 
-    formulario.addEventListener("submit", function(event){
+    let description = document.getElementById("descripciónDelProducto");
+    if (description.value == "") {
+      errores.push("El campo descripción del producto es obligatorio");
+    } else if (description.value.length < 20) {
+      errores.push("El campo descrpción del producto debe tener como mínimo 20 caracteres");
+    }
 
-        let nombre = document.getElementById("nombreDelProducto")
-        if (nombre.value == "") {
-            errores.push("Campo obligatorio")
-        }else if(nombre.value.length < 5){
-            errores.push("Debe tener como mínimo 5 caracteres")
-        };
 
-        let description = document.getElementById("descripciónDelProducto")
-  if (description.value == "") {
-            errores.push("Campo obligatorio")
-        } else if(description.value.length < 20){
-            errores.push("Debe tener como mínimo 20 caracteres")
-        };
+    let imagen = document.getElementById("imagenDelProducto");
+    let file = imagen.files[0];
+    let extencionesAceptadas = [".jpg", ".jpeg", ".png", ".gif"];
+    if (!file) {
+      errores.push("Tienes que subir una imagen");
+    } else {
+      let fileExtension = "." + file.name.split(".").pop().toLowerCase();
+      if (!extencionesAceptadas.includes(fileExtension)) {
+        errores.push(
+          "Las extensiones de archivo permitidas son " +
+            extencionesAceptadas.join(",")
+        );
+      }
+    }
 
-        let imagen = document.getElementById("imagenDelProducto");
-       imagen.custom((value, {req})=>{
-        let file = req.file;
-        let extencionesAceptadas= ['.jpg', '.jpeg' , '.png' , '.gif'];
-        if(!file){
-            errores.push('Tienes que subir una imagen');
-        }else{
-          let fileExtension = path.extname(file.originalname);
-          if(!extencionesAceptadas.includes(fileExtension)){
-            errores.push('Las extensiones de archivo permitidas son ' + extencionesAceptadas.join(','))    
-          }
-        }
-        return true;
-      })
+    let price = document.getElementById("precioDelProducto");
+    if (price.value == "") {
+      errores.push("Debes colocarle precio al producto");
+    }
 
-        let price =  document.getElementById("precioDelProducto")
-        if (price.value == "") {
-            errores.push("Campo obligatorio")
-        };
+    let color = document.getElementById("colorDelProducto");
+    if (color.value == "") {
+      errores.push("Debe elegir un color psrs el producto");
+    }
 
-        let color = document.getElementById("colorDelProducto");
-        if (color.value == "") {
-            errores.push("Debe elegir un color")
-        };
+    let cat_pro = document.getElementsByName("cat_pro");
+    if (cat_pro.value == "") {
+      errores.push("El producto debe tener una categoria");
+    }
 
-        let cat_pro = document.getElementsByName("cat_pro");
-        if (cat_pro.value == "") {
-            errores.push("Debe elegir una categoria")
-        };
+    let talle = document.getElementById("talle");
+    if (talle.value == "") {
+      errores.push("Debe elegir un talle");
+    }
 
-        let talle = document.getElementById("talle");
-        if (talle.value == "") {
-            errores.push("Debe elegir un talle")
-        };
-
-        if(errores.length > 0){
-            event.preventDefault()
-            let ulErrores = document.querySelector("div.errores");
-            for(let i = 0; i < errores.length; i++){
-                ulErrores.innerHTML += "<li>" + errores[i]+ "</li>"
-            }
-            ulErrores.style.color = "red"
-        }
-    })
-
-})
+    if (errores.length > 0) {
+      event.preventDefault();
+      let ulErrores = document.querySelector("div.errores");
+     for (let i = 0; i < errores.length; i++) {
+        ulErrores.innerHTML += "<li>" + errores[i] + "</li>";
+      }
+      ulErrores.style.color = "green";
+    }
+  });
+});

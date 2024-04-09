@@ -191,6 +191,7 @@ const productoController = {
       db.Producto.create(
         {
           nombre: req.body.name,
+          descripcion: req.body.description,
           marca: req.body.marca,
           imagen: imagen,
           color: req.body.color,
