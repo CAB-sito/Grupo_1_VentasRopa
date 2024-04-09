@@ -743,8 +743,8 @@ i.fa-solid.fa-circle {
 }
 
 .erroresEnUpdate,
-.erroresEnCreate{
-  color: red
+.erroresEnCreate {
+  color: red;
 }
 
 /* Vista del perfil*/
@@ -792,8 +792,29 @@ p {
   margin: 0 0 10px 0;
 }
 
-.user-CerrarSesion{
+.user-CerrarSesion {
   margin-top: 20%;
 }
 
 /*Fin de la vista de perfil*/
+/*Preguntas frecuentes*/
+.preguntas-encabezado {
+  text-align: center;
+}
+.preguntas-titulo {
+  padding-top: 10px;
+}
+.preguntas {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 10px;
+  border: 1px solid black;
+  background-color: white;
+  width: 70%;
+  margin: 2% 15%;
+  padding: 35px;
+  border-radius: 20px;
+}
+
+/*Fin de preguntas frecuentes*/
