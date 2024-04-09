@@ -22,7 +22,7 @@
           </div>
 
         <label for="title">NOMBRE DEL PRODUCTO</label>
-        <input class="espacio-completar" type="text" name="name" id="nombreDelProducto" value="<%= producto.name %>" />
+        <input class="espacio-completar" type="text" name="name" id="nombreDelProducto" value="<%= producto.nombre %>" />
         <label for="description">DESCRIPCIÓN</label>
         <input class="espacio-completar" type="text" name="description" id="descripciónDelProducto" value="<%= producto.description %>" />
         <label for="marca">MARCA</label>
@@ -30,7 +30,7 @@
         <label for="imagen">IMÁGEN</label>
         <input class="espacio-completar" type="file" name="imagen" id="imagenDelProducto" value="<%= producto.imagen %>"/>
         <label for="price">PRECIO</label>
-        <input class="espacio-completar" type="number" name="price" id="precioDelProducto"  value="<%= producto.price %>"/>
+        <input class="espacio-completar" type="number" name="price" id="precioDelProducto"  value="<%= producto.precio %>"/>
         <label for="color">COLOR</label>
         <select class="espacio-completar" name="color" id="colorDelProducto">
           <option value="rojo" <%= producto.color == "rojo" ? "selected" : "" %>>Rojo</option>
@@ -44,7 +44,7 @@
           <option value="otro" <%= producto.color == "otro" ? "selected" : "" %>>Otro</option>
         </select>
         <label for="discount">DESCUENTO</label>
-        <input class="espacio-completar" type="number" min="0" max="100" name="discount" id="discount" value="<%= producto.discount %>" />
+        <input class="espacio-completar" type="number" min="0" max="100" name="discount" id="discount" value="<%= producto.descuento %>" />
         <input class="boton-añadir" type="submit" value="CONFIRMAR MODIFICACIÓN" />
       </form>
       
