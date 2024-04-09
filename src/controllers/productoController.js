@@ -179,6 +179,7 @@ const productoController = {
 
   editar: (req, res) => {
     let imagen;
+    
     if (req.file) {
       imagen = req.file.filename;
     } else {
@@ -188,7 +189,7 @@ const productoController = {
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      db.Producto.create(
+      db.Producto.update(
         {
           nombre: req.body.name,
           descripcion: req.body.description,
@@ -201,14 +202,20 @@ const productoController = {
         {
           where: { id: req.params.id },
         }
-      );
+      )
+     .then(()=>{
       res.redirect("/products");
+     })
     } else {
-      res.render("modificarProducto", {
-        producto: producto,
-        usuario: req.session.usuario,
-        errors: errors.array(),
-      });
+      db.Producto.findByPk(req.params.id)
+      .then((producto)=>{
+        res.render("modificarProducto", {
+          producto: producto,
+          usuario: req.session.usuario,
+          errors: errors.array()})
+      })
+      
+      ;
     }
   },
 

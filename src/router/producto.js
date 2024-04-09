@@ -32,6 +32,30 @@ const validacionesProductos = [
   //colores y talles no estan en la base de datos
 ]
 
+const validacionesModProductos = [
+  body('name').notEmpty().withMessage("Campo obligatorio").bail()
+  .isLength({ min:5 }).withMessage("Debe tener como mínimo 5 caracteres"),
+  body('description').notEmpty().withMessage("El producto debe tener una descripción").bail()
+  .isLength({ min:20 }).withMessage("Debe tener como mínimo 20 caracteres"),
+  body('imagen').custom((value, {req})=>{
+    let file = req.file;
+    let extencionesAceptadas= ['.jpg', '.jpeg' , '.png' , '.gif'];
+    if(!file){
+      file = "default.png ";
+      //throw new Error('Tienes que subir una imagen');
+    }else{
+      let fileExtension = path.extname(file.originalname);
+      if(!extencionesAceptadas.includes(fileExtension)){
+        throw new Error('Las extensiones de archivo permitidas son ' + extencionesAceptadas.join(','))    
+      }
+    }
+    return true;
+  }),
+  body('price').notEmpty().withMessage("Campo obligatorio"),
+  body('color').notEmpty().withMessage("Debe elegir un color"),
+  //colores y talles no estan en la base de datos
+]
+
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.resolve(__dirname, "../../public/images/products"));
@@ -53,7 +77,7 @@ router.get("/:id/edit", authMiddleware ,controller.modificar);
 // Añadir ruta post /
 router.post("/", update.single("imagen"), validacionesProductos, controller.guardarProducto)
 // Añadir ruta put /:id
-router.put("/:id", update.single("imagen"), validacionesProductos, controller.editar)
+router.put("/:id", update.single("imagen"), validacionesModProductos, controller.editar)
 // Añadir ruta delete /:id
 router.delete("/:id", controller.eliminar)
 
