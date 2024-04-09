@@ -5,7 +5,7 @@ const path = require("path");
 const usersController = require("../controllers/usersController");
 const { check } = require("express-validator");
 const guestMiddleware = require("../middlewares/guestMiddleware");
-const authMiddleware = require("../middlewares/authMiddleware");
+const authMiddlewareLogin = require("../middlewares/authMiddlewareLogin");
 const db = require("../database/models");
 
 let storage = multer.diskStorage({
@@ -77,7 +77,7 @@ const validacionesRegistro = [
 ];
 
 //perfil:
-router.get("/perfil", authMiddleware, usersController.usuario);
+router.get("/perfil", authMiddlewareLogin, usersController.usuario);
 
 //login
 router.get("/login", guestMiddleware, usersController.login);
