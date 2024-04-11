@@ -1,15 +1,11 @@
-//const fs = require("fs");
-//const path = require("path");
+
 const db = require("../database/models");
 
-/*const productsFilePath = path.resolve(__dirname, "../data/product.json");
-function productList() {
-  return JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-}*/
+
 
 const controller = {
   home: (req, res) => {
-    //productos = db.Producto.findAll({include:["CategoriaProducto"]});
+   
     db.Producto.findAll({
       include: ["CategoriaProducto"],
     }).then((productos) => {
@@ -18,11 +14,7 @@ const controller = {
       );
       const ofertas = productos.filter((product) => product.id_categoria == 2);
 
-      res.render("index", {
-        productosDestacados,
-        ofertas,
-        usuario: req.session.usuario,
-      });
+      res.render("index", { productosDestacados, ofertas, usuario: req.session.usuario});
     });
   },
   register: (req, res) => {

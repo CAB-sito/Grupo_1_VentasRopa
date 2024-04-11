@@ -41,7 +41,7 @@ window.addEventListener("load", function () {
 
     let color = document.getElementById("colorDelProducto");
     if (color.value == "") {
-      errores.push("Debe elegir un color psrs el producto");
+      errores.push("Debe elegir un color para el producto");
     }
 
     let cat_pro = document.getElementsByName("cat_pro");
